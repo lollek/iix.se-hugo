@@ -94,15 +94,15 @@ uglyURLs = false
 # Author’s information
 [author]
     # Name
-    name = "Olle A-K"
+    #name = "Olle A-K"
     # Email
-    email = "olle+notes@iix.se"
+    #email = "olle+notes@iix.se"
     # Motto or introduction
     #motto = "Viva La Vida"
     # Avatar
-    avatar = "/icons/apple-touch-icon.png"
+    #avatar = "/icons/apple-touch-icon.png"
     # Personal website, default: baseURL
-    website = "https://iix.se/"
+    #website = "https://iix.se/"
     # Twitter
     #twitter = "reuixiy"
 
