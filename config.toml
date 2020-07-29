@@ -3,7 +3,7 @@
 
 baseURL = "https://notes.iix.se/"
 #baseURL = "http://localhost:8080/"
-title = "Iix-notes"
+title = "iix-notes"
 languageCode = "en"
 hasCJKLanguage = false
 # Copyright information (Markdown supported)
