@@ -1,8 +1,8 @@
 ##########################################
 # Site Settings
 
-#baseURL = "https://notes.iix.se/"
-baseURL = "http://localhost:8080/"
+baseURL = "https://notes.iix.se/"
+#baseURL = "http://localhost:8080/"
 title = "Iix-notes"
 languageCode = "en"
 hasCJKLanguage = false
