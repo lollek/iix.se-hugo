@@ -65,7 +65,9 @@ paginate = 5
 
 [params.homeInfoParams]
     Title = "Hi there 👋"
-    Content = "This is my personal collection of notes. They come from books, games and various other hobbies, but most are programming or server related. I hope you find something useful."
+    Content = "This is my personal collection of notes. They come from books,
+    games and various other hobbies, but most are programming or server related.
+    I hope you will find something useful."
 
 [[params.socialIcons]]
     name = "github"
