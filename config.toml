@@ -64,7 +64,7 @@ paginate = 5
     url = "tags"
 
 [params.homeInfoParams]
-    Title = "Hi there 👋"
+    Title = "Hi there"
     Content = "This is my personal collection of notes. They come from books, games and various other hobbies, but most are programming or server related.  I hope you will find something useful."
 
 [[params.socialIcons]]
