@@ -91,22 +91,28 @@ paginate = 5
     keys = [ "title", "permalink", "summary", "content" ]
 
 [[menu.main]]
+    identifier = "games"
+    name = "games"
+    url = "/tags/browsergame"
+    weight = 10
+
+[[menu.main]]
     identifier = "categories"
     name = "categories"
     url = "/categories/"
-    weight = 10
+    weight = 20
 
 [[menu.main]]
     identifier = "tags"
     name = "tags"
     url = "/tags/"
-    weight = 20
+    weight = 30
 
 [[menu.main]]
     identifier = "search"
     name = "search"
     url = "/search/"
-    weight = 30
+    weight = 40
 
 [outputs]
     home = [ "HTML", "RSS", "JSON" ]
