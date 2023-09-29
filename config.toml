@@ -52,7 +52,3 @@ paginate = 5
     name = "search"
     url = "/search/"
     weight = 40
-
-[outputs]
-    home = [ "HTML", "RSS", "JSON" ]
-
