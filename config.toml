@@ -16,70 +16,9 @@ paginate = 5
     env = "production"
     title = "iix-notes"
     description = "iix-notes"
-    keywords = [ "Blog", "Portfolio", "PaperMod" ]
-    #author = "Olle A/K"
+    keywords = [ "Blog", "Notes" ]
+    author = "Olle Aid Kvarnström"
     DateFormat = "January 2, 2006"
-    defaultTheme = "auto"
-    disableThemeToggle = false
-    ShowReadingTime = true
-    ShowShareButtons = true
-    ShowPostNavLinks = true
-    ShowBreadCrumbs = true
-    ShowCodeCopyButtons = false
-    disableSpecial1stPost = false
-    disableScrollToTop = false
-    comments = false
-    hidemeta = false
-    hideSummary = false
-    showtoc = true
-    tocopen = true
-
-[params.assets]
-    favicon = "/favicon.ico"
-    favicon16x16 = "/favicon.ico"
-    favicon32x32 = "/favicon.ico"
-    apple_touch_icon = "/favicon.ico"
-    safari_pinned_tab = "/favicon.ico"
-
-[params.label]
-    text = "iix-notes"
-    icon = "/favicon.ico"
-    iconHeight = 35
-
-[params.profileMode]
-    enabled = false
-    title = "ExampleSite"
-    subtitle = "This is subtitle"
-    imageUrl = "<img location>"
-    imageWidth = 120
-    imageHeight = 120
-    imageTitle = "my image"
-
-[[params.profileMode.buttons]]
-    name = "Posts"
-    url = "posts"
-
-[[params.profileMode.buttons]]
-    name = "Tags"
-    url = "tags"
-
-[params.homeInfoParams]
-    Title = "Hi there"
-    Content = "This is my personal collection of notes. They come from books, games and various other hobbies, but most are programming or server related.  I hope you will find something useful."
-
-[[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/lollek"
-
-[params.cover]
-    hidden = true
-    hiddenInList = true
-    hiddenInSingle = true
-
-[params.editPost]
-    URL = "https://github.com/lollek/iix.se-hugo/blob/master/content"
-    Text = "Suggest Changes"
-    appendFilePath = true
 
 [params.fuseOpts]
     isCaseSensitive = false
