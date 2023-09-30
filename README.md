@@ -8,5 +8,10 @@ Hugo v0.92+
 ## Generate static data in /public
 ```
 git submodule update --init --recursiv
-hugo
+./hugo
+```
+
+## Start Hugo server
+```bash
+./hugo server
 ```
