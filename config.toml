@@ -12,6 +12,15 @@ paginate = 10
     disableXML = true
     minifyOutput = true
 
+[outputs]
+    home = ["HTML", "SearchIndex"]
+
+[outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+
 [params]
     env = "production"
     title = "iix-notes"
