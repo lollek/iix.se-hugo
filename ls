@@ -7,7 +7,8 @@ categories() {
             ag --nobreak --nonumbers --nogroup --nofilename -G 'content/posts/.*\.md' -o '(?<=categories: ).*' | sort | uniq -c | sort -nr
             ;;
         *)
-            ag --files-with-matches -G 'content/posts/.*\.md' "categories: \"$1\""
+            files="$(ag --files-with-matches -G 'content/posts/.*\.md' "categories: \"$1\"")"
+            ag --nonumber --noheading --nobreak -o '(?<=title: ).*' $files
             ;;
     esac
 }
@@ -16,7 +17,7 @@ case "$1" in
     "")
         ag --nonumber --noheading --nobreak -G 'content/posts/.*\.md' -o '(?<=title: ).*'
         ;;
-    "categories")
+    "categories"|"cat")
         shift
         categories $@
         ;;
