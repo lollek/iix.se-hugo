@@ -6,7 +6,7 @@ newContentEditor = ""
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
-paginate = 10 
+pagerSize = 10 
 
 [minify]
     disableXML = true
