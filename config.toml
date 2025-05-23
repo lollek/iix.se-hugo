@@ -1,7 +1,6 @@
 baseURL = "https://notes.iix.se/"
 title = "iix-notes"
 languageCode = "en"
-theme = "PaperMod"
 newContentEditor = ""
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
