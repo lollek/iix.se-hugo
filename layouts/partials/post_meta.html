@@ -1,0 +1,9 @@
+{{- if not .Date.IsZero -}}
+<span title='{{ .Date }}'>{{ .Date | time.Format .Site.Params.DateFormat }}</span>
+&nbsp;|&nbsp; 
+{{- end }}
+
+
+{{- range $index, $tag := ($.GetTerms "tags") }}
+🏷️<a href="{{ $tag.Permalink }}">{{ $tag.LinkTitle }}</a>
+{{- end }}

@@ -1,0 +1,37 @@
+:root {
+    --gap: 24px;
+    --content-gap: 20px;
+    --nav-width: 1024px;
+    --main-width: 720px;
+    --header-height: 60px;
+    --footer-height: 60px;
+    --radius: .4rem;
+    --theme: #FFF4EC;           /* Main background color */
+    --entry: #F7EADE;           /* Posts in list view and ToC */
+    --primary: #0D2230;         /* Title, links on --theme background AND --entry background */
+    --secondary: #2F3E46;       /* Text color on --entry background */
+    --tertiary: #f96743;        /* Tags, categories, back-to-top */
+    --content: #1f1f1f;         /* Main single view color on --theme background */
+    --hljs-bg: #1c1d21;         /* Code blocks */
+    --code-bg: var(--entry);    /* Backtick code lines */
+    --border: #0D2230;          /* Entry border color */
+}
+
+.dark {
+    --theme: #1a1a1a;
+    --entry: #242424;
+    --primary: #e6e6e6;
+    --secondary: #cccccc;
+    --content: #cccccc;
+    --hljs-bg: #2e2e33;
+    --code-bg: var(--hljs-bg);
+    --border: var(--content);
+}
+
+.list {
+    background: var(--theme);
+}
+
+.dark.list {
+    background: var(--theme);
+}
