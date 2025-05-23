@@ -1,7 +1,7 @@
 baseURL = "https://notes.iix.se/"
 title = "iix-notes"
 languageCode = "en"
-newContentEditor = ""
+newContentEditor = "vim"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true

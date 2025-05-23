@@ -1,6 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-draft: true
+date: "{{ time.Now.Format "2006-01-02" }}"
+categories: "category"
+tags:
+- tag
+summary: A short summary
 ---
 

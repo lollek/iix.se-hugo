@@ -9,15 +9,15 @@
 
         <div class="inner">
             {{- if (.Param "UseHugoToc") }}
-            {{- .TableOfContents -}}
+                {{- .TableOfContents -}}
             {{- else }}
-            {{- $largest := 6 -}}
-            {{- range $headers -}}
-            {{- $headerLevel := index (findRE "[1-6]" . 1) 0 -}}
-            {{- $headerLevel := len (seq $headerLevel) -}}
-            {{- if lt $headerLevel $largest -}}
-            {{- $largest = $headerLevel -}}
-            {{- end -}}
+                {{- $largest := 6 -}}
+                {{- range $headers -}}
+                {{- $headerLevel := index (findRE "[1-6]" . 1) 0 -}}
+                {{- $headerLevel := len (seq $headerLevel) -}}
+                {{- if lt $headerLevel $largest -}}
+                    {{- $largest = $headerLevel -}}
+                {{- end -}}
             {{- end -}}
 
             {{- $firstHeaderLevel := len (seq (index (findRE "[1-6]" (index $headers 0) 1) 0)) -}}
@@ -47,13 +47,13 @@
                     <ul>
                         {{/* the first should not be recorded */}}
                         {{- if ne $prevHeaderLevel . -}}
-                        {{- $.Scratch.Add "bareul" . -}}
+                            {{- $.Scratch.Add "bareul" . -}}
                         {{- end -}}
                         {{- end -}}
                         {{- else -}}
                         </li>
                         {{- if lt $headerLevel $prevHeaderLevel -}}
-                        {{- range seq (sub $prevHeaderLevel 1) -1 $headerLevel -}}
+                            {{- range seq (sub $prevHeaderLevel 1) -1 $headerLevel -}}
                         {{- if in ($.Scratch.Get "bareul") . -}}
                     </ul>
                     {{/* manually do pop item */}}
