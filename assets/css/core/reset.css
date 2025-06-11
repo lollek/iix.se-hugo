@@ -124,7 +124,7 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--tertiary);
+    background: var(--primary);
     border: 5px solid var(--theme);
     border-radius: var(--radius);
 }

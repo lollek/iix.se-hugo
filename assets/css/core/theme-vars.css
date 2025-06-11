@@ -1,31 +1,31 @@
 :root {
-    --gap: 24px;
     --content-gap: 20px;
-    --nav-width: 1024px;
-    --main-width: var(--nav-width);
-    --header-height: 60px;
-    --footer-height: 60px;
+    --gap: 24px;
     --radius: .4rem;
-    --theme: #FFF4EC;           /* Main background color */
-    --entry: #F7EADE;           /* Posts in list view and ToC */
-    --primary: #0D2230;         /* Title, links on --theme background AND --entry background */
-    --secondary: #2F3E46;       /* Text color on --entry background */
-    --tertiary: #f96743;        /* Tags, categories, back-to-top */
-    --content: #1f1f1f;         /* Main single view color on --theme background */
-    --hljs-bg: #1c1d21;         /* Code blocks */
-    --code-bg: var(--entry);    /* Backtick code lines */
+    --footer-height: 60px;
+    --header-height: 60px;
+    --main-width: 1024px;
+    --nav-width: var(--main-width);
     --border: #0D2230;          /* Entry border color */
+    --code-bg: #F7EADE;         /* Backtick code lines */
+    --content: #1f1f1f;         /* Main single view color on --theme background */
+    --entry: var(--code-bg);    /* Posts in list view and ToC */
+    --hljs-bg: #1c1d21;         /* Code blocks */
+    --primary: #63351b;         /* Title, links on --theme background AND --entry background */
+    --secondary: #808000;       /* Text color on --entry background */
+    --tertiary: #f96743;        /* Tags, categories, back-to-top */
+    --theme: #FFF4EC;           /* Main background color */
 }
 
 .dark {
-    --theme: #1a1a1a;
+    --border: #cccccc;
+    --code-bg: #2e2e33;
+    --content: var(--border);
     --entry: #242424;
-    --primary: #e6e6e6;
+    --hljs-bg: var(--code-bg);
+    --primary: #f96743;
     --secondary: #cccccc;
-    --content: #cccccc;
-    --hljs-bg: #2e2e33;
-    --code-bg: var(--hljs-bg);
-    --border: var(--content);
+    --theme: #1a1a1a;
 }
 
 .list {

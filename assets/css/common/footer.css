@@ -4,8 +4,8 @@
     bottom: 60px;
     right: 30px;
     z-index: 99;
-    color: var(--primary);
-    background: var(--tertiary);
+    color: var(--theme);
+    background: var(--primary);
     width: 42px;
     height: 42px;
     padding: 12px;

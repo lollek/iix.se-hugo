@@ -1,6 +1,6 @@
 .post-single a,
 .toc a {
-    box-shadow: var(--tertiary) 0px -1px 0px 0px inset;
+    box-shadow: var(--primary) 0px -1px 0px 0px inset;
     border-bottom: 1px solid transparent;
 }
 
@@ -8,7 +8,7 @@
 .toc a:hover {
     transition: box-shadow .1s ease-in-out;
     text-decoration: none;
-    border-bottom: 1px solid var(--tertiary);
+    border-bottom: 1px solid var(--primary);
 }
 
 .page-header,
@@ -27,7 +27,7 @@
 }
 
 .post-meta {
-    color: var(--secondary);
+    color: var(--content);
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
@@ -223,7 +223,7 @@
 .post-content hr {
     margin: 30px 0;
     height: 2px;
-    background: var(--tertiary);
+    background: var(--primary);
     border-top: 0;
     border-bottom: 0;
 }
