@@ -29,13 +29,17 @@ pagerSize = 10
     DateFormat = "January 2, 2006"
 
 [params.fuseOpts]
+    distance = 100
+    findAllMatches = false
+    ignoreLocation = true
+    includeMatches = false
+    includeScore = false
     isCaseSensitive = false
-    shouldSort = true
+    keys = [ "title", "summary", "content" ]
     location = 0
-    distance = 1_000
-    threshold = 0.4
-    minMatchCharLength = 0
-    keys = [ "title", "permalink", "summary", "content" ]
+    minMatchCharLength = 1
+    shouldSort = true
+    threshold = 0.1
 
 [[menu.main]]
     identifier = "games"
