@@ -61,8 +61,3 @@ enableRobotsTXT = true
     url = "/tags/"
     weight = 30
 
-[[menu.main]]
-    identifier = "search"
-    name = "search"
-    url = "/search/"
-    weight = 40
