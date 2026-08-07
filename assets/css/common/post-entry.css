@@ -43,6 +43,39 @@
     border: 1px solid var(--border);
 }
 
+@media screen and (min-width: 769px) {
+    .home-posts {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .home-posts .post-entry {
+        margin-bottom: 0;
+        padding: 18px;
+        height: 192px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .home-posts .entry-header h2 {
+        font-size: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .home-posts .entry-footer {
+        margin-top: auto;
+    }
+}
+
+.home-posts + .page-footer {
+    margin-top: var(--gap);
+}
+
 .post-entry:active {
     transform: scale(0.96);
 }

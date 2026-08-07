@@ -26,9 +26,15 @@
 {{- $paginator := .Paginate $pages }}
 
 {{- $term := .Data.Term }}
+{{- if .IsHome }}
+<section class="home-posts">
+{{- end }}
 {{- range $index, $page := $paginator.Pages }}
 
 {{- partial "list_item.html" . -}}
+{{- end }}
+{{- if .IsHome }}
+</section>
 {{- end }}
 
 {{- if gt $paginator.TotalPages 1 }}
