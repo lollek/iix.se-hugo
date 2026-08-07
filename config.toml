@@ -5,7 +5,9 @@ newContentEditor = "vim"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
-pagerSize = 10
+
+[pagination]
+    pagerSize = 15
 
 [minify]
     disableXML = true
