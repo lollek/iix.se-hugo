@@ -1,0 +1,13 @@
+---
+title: "Programming Design Patterns"
+slug: "218"
+date: "2025-06-17"
+categories: "Programming"
+tags:
+- programming
+summary: General programming design patterns
+---
+
+## Circuit breaker
+
+[Circuit breaker pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)

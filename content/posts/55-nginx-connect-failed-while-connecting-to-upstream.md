@@ -1,0 +1,15 @@
+---
+title: "Nginx: connect() failed while connecting to upstream"
+slug: "55"
+date: 2017-05-07T12:00:00Z
+categories: "System Administration"
+tags:
+- nginx
+- troubleshooting
+---
+Spam in error.log:
+
+    2017/05/07 16:51:50 [error] 30504#0: *7089 connect() failed (111: Connection refused) while connecting to upstream, client: 169.54.244.93, server: iix.se, request: "GET / HTTP/1.1", upstream: "http://[::1]:8001/", host: "phoenix.iix.se"
+
+In your nginx configuration, replace hostnames with ip-addresses
+

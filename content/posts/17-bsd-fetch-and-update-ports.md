@@ -1,0 +1,20 @@
+---
+title: BSD - Fetch and update ports
+slug: "17"
+date: 2014-10-27T12:00:00Z
+categories: "BSD"
+tags:
+- portsnap
+- portmaster
+---
+```bash
+portsnap fetch update
+
+# Upgrade ports to newest version
+portmaster -ad         # ALL ports
+portmaster -d portname # Specific port
+
+# List upgradable ports
+portmaster -L
+```
+

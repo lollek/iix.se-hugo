@@ -1,0 +1,63 @@
+---
+title: Git Cheatsheet
+slug: "23"
+date: 2015-03-19T12:00:00Z
+categories: "Programming"
+tags:
+- git
+---
+
+Things about git which I sometimes forget
+
+## Recovering from a spaghetti branch
+
+Different ways of handling when you've branched from a branch, which later gets merged to a branch which you also want to merge to.
+
+### rebase --onto
+You have created CURRENTBRANCH from OLDBRANCH which later got merged into NEWBRANCH. 
+Now you want to clean up OLDBRANCH branch to reflect the real changes based on NEWBRANCH before a pull request.
+```bash
+git rebase --onto NEWBRANCH OLDBRANCH CURRENTBRANCH
+```
+
+### reset --soft
+You have created CURRENTBRANCH from OLDBRANCH which later got merged into NEWBRANCH. 
+Since then you have merged some branches and your git history looks like a mess. 
+You've tried everything and now you just want your changes in a commit and be done with it.
+```bash
+# Find the commit prior to your first commit where CURRENTBRANCH branches from OLDBRANCH call it PREVCOMMIT
+git reset --soft PREVCOMMIT
+git commit
+git rebase --onto NEWBRANCH OLDBRANCH CURRENTBRANCH
+```
+
+## Rename branch
+```bash
+git branch -m OLDNAME NEWNAME
+```
+
+## Remove everything in DIR which is not version controlled.
+```bash
+git clean -fxd DIR
+```
+
+## Force push several branches
+```bash
+# Force push (+) branch 1 to branch1 and branch2 on origin
+git push origin +branch1 +branch1:branch2
+```
+
+## Chmod files on windows
+```bash
+git update-index --chmod=+x <file>
+```
+
+## Find git-special folders
+```bash
+# Git hook path
+git rev-parse --git-path hooks
+
+# Active git dir
+git rev-parse --git-dir
+```
+

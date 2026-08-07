@@ -1,0 +1,20 @@
+---
+title: Powershell Cheatsheet
+slug: "143"
+date: 2020-09-02
+categories: "Windows"
+tags:
+- powershell
+- cheatsheet
+---
+
+Collection of powershell stuff.
+
+Curl replacement
+```powershell
+Invoke-WebRequest -Uri http://localhost
+Invoke-WebRequest -Uri http://localhost -Method POST
+
+$cred = Get-Credential
+Invoke-WebRequest -Uri http://localhost -Method POST -Credential $cred -UseBasicParsing
+```

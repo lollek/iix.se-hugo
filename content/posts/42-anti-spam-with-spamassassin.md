@@ -1,0 +1,48 @@
+---
+title: Anti-spam with Spamassassin
+slug: "42"
+date: 2016-01-14T12:00:00Z
+categories: "Linux Administration"
+tags:
+- postfix
+- smtp
+- spamassassin
+---
+## Implementation:
+- Login on server as root
+- Install spamassassin through aptitude
+- In /etc/default/spamassassin:
+
+~~~
+Set ENABLED=1
+~~~
+
+- Add/uncomment in /etc/spamassassin/local.cf:
+
+~~~
+rewrite_header Subject *****SPAM*****
+report_safe 0
+~~~
+
+- In /etc/postfix/master.cf:
+
+~~~
+smtp      inet  n       -       -       -       -       smtpd
+  -o content_filter=spamassassin
+
+spamassassin unix -     n       n       -       -       pipe
+  user=debian-spamd argv=/usr/bin/spamc -f -e /usr/sbin/sendmail -oi -f ${sender} ${recipient}
+~~~
+
+- Restart services
+
+```bash
+service spamassassin start
+service postfix reload
+```
+
+## Verification:
+Email sent to server with body
+    ``XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X``
+    should have subject rewritten to ``****SPAM**** $header``
+

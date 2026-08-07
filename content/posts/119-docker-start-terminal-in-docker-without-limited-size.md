@@ -1,0 +1,12 @@
+---
+title: "Docker: Start terminal in Docker without limited size"
+slug: "119"
+date: 2018-12-14T12:00:00Z
+categories: "Linux"
+tags:
+- docker
+---
+Sometimes when you exec into a docker container normally, the size of the containers terminal will be much smaller than your real screen, making it not work properly. To solve this you need to set COLUMNS and LINES in the containers env:
+
+`sudo docker exec -e COLUMNS="$(tput cols)" -e LINES="$(tput lines)" -it docker-container bash`
+

@@ -1,0 +1,29 @@
+---
+title: LaTeX Template
+slug: "18"
+date: 2014-10-27T12:00:00Z
+categories: "Other"
+tags:
+- latex
+---
+LaTeX Template:
+```latex
+    \documentclass[a4paper,11pt]{article}
+    \usepackage[utf8]{inputenc}
+
+    \author{Author Name}
+    \title{This is the title}
+
+    \begin{document}
+    \maketitle
+
+    \section{Section Title}
+    Wow, text
+    \flushleft
+
+    More Text\\[10pt]
+
+    Text
+
+    \end{document}
+```

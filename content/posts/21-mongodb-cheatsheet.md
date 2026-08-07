@@ -1,0 +1,27 @@
+---
+title: MongoDB Cheatsheet
+slug: "21"
+date: 2014-10-28T12:00:00Z
+categories: "Programming"
+tags:
+- mongo
+---
+### Starting:
+    mongo
+
+### Connect to database
+    show dbs
+    use local
+
+### See database tables
+    show collections
+    db.funnytable.find()
+
+### Regex
+    db.funnytable.find(
+      $or: [
+            {'name': { $regex: req.params.username, $options: 'i' }},
+            {'username': { $regex: req.params.username, $options: 'i' }},
+            {'email': { $regex: req.params.username, $options: 'i' }}
+          ])
+

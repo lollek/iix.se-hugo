@@ -1,0 +1,21 @@
+---
+title: Remove subfolder from all git history
+slug: "130"
+date: 2020-02-27T12:00:00Z
+categories: "Programming"
+tags:
+- git
+---
+```bash
+# Remove DIRECTORY_NAME from all commits, then remove the refs to the old commits
+# (repeat these two commands for as many directories that you want to remove)
+git filter-branch --index-filter 'git rm -rf --cached --ignore-unmatch DIRECTORY_NAME/' --prune-empty --tag-name-filter cat -- --all
+git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+
+# Ensure all old refs are fully removed
+rm -Rf .git/logs .git/refs/original
+
+# Perform a garbage collection to remove commits with no refs
+git gc --prune=all --aggressive
+```
+

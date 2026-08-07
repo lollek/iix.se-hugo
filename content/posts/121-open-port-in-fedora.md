@@ -1,0 +1,16 @@
+---
+title: Open port in fedora
+slug: "121"
+date: 2019-03-04T12:00:00Z
+categories: "Linux"
+tags:
+- fedora
+- port
+- firewall
+- firewall-cmd
+---
+## Open port for a given zone
+```
+sudo firewall-cmd --zone=FedoraServer --add-port=8080/tcp
+```
+

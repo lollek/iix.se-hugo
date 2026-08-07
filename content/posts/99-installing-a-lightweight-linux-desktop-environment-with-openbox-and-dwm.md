@@ -1,0 +1,61 @@
+---
+title: Installing a lightweight linux desktop environment with openbox and dwm
+slug: "99"
+date: 2018-03-08T12:00:00Z
+categories: "Linux"
+tags:
+- grub
+- apt
+- openbox
+- dwm
+---
+These are my installation notes for creating a lightweight linux desktop environment from scratch, which contains only the most necessary applications. I'll probably update it slightly in the future, when I realize I have missed some application. It will contain both openbox and dwm, as I'm always torn between using a tiling versus a floating window manager. Mostly I prefer tiling ones, but with some applications, they simply don't work well.
+
+Scripts are [here](https://github.com/lollek/dotfiles/tree/master/lite-de)  
+
+## Install the base distro
+I prefer the [Debian mini ISO](https://www.debian.org/CD/netinst/). Make sure to not install anything which is not required.  
+
+## Add sudo
+```bash
+su - root
+apt install sudo
+visudo
+
+# Add the row and save
+iix    ALL=(ALL:ALL) ALL
+```
+
+## Change terminal resolution
+```grub
+# /etc/default/grub
+
+GRUB_GFXMODE=1024x768
+GRUB_GFXPAYLOAD_LINUX=keep
+```
+
+```bash
+sudo update-grub
+sudo reboot
+```
+
+## Install base configuration
+```bash
+sudo apt install git
+cd $HOME
+git clone https://github.com/lollek/dotfiles.git
+dotfiles/install dotfiles lite-de
+```
+Log out and login again
+
+##  Configure openbox and friends
+Start openbox with `startx-openbox`.  
+Right click background and run ObConf. Set theme to FlatSlate.  
+Configure tint2 with `tint2conf`.  
+Don't forget to set correct background image in `$HOME/.config/openbox/autostart` later.  
+
+## Configure dwm and friends
+Start dwm with `startx-dwm`.  
+All styling should already be applied through patches, and then running `make && sudo make install`. I have some in the *patches* subfolder.  
+
+

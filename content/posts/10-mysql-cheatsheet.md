@@ -1,0 +1,84 @@
+---
+title: MySQL Cheatsheet
+slug: "10"
+date: 2014-08-29T12:00:00Z
+categories: "Programming"
+tags:
+- cheatsheet
+---
+## Starting
+    mysql         # Same username, no password
+    mysql -p      # Password protected
+    mysql -u user
+    mysql -h hostname
+
+## Create user
+```
+CREATE USER me
+GRANT ALL PRIVILEGES ON database_name.* TO 'me'@'%';
+ALTER USER 'me'@'%' IDENTIFIED BY 'newPass';
+```
+
+## Connect to databaes
+    SHOW DATABASES;
+    SHOW DATABASES LIKE 'ok%';
+    USE mysql;
+
+## See database tables
+    SHOW TABLES;
+    SHOW TABLES LIKE 'ok%';
+    SELECT * FROM important_stuffs;
+
+## Extend tables
+    ALTER TABLE important_stuffs ADD description VARCHAR(100);
+    ALTER TABLE important_stuffs ADD description VARCHAR(100) AFTER severity;
+    ALTER TABLE important_stuffs ADD description VARCHAR(100) FIRST;
+
+## Delete from tables
+    SELECT * FROM important_stuffs WHERE severity="low";
+    DELETE FROM important_stuffs WHERE severity="low";
+
+## Insert into tables
+    INSERT INTO important_stuffs VALUES("Wow, so important", "high");
+    INSERT INTO important_stuffs SET description="Wow, so important", severity="high";
+
+## Show access rights
+    SHOW GRANTS;
+
+## Change all email addresses to my  (when mailserver is activated)
+    UPDATE users SET email= CONCAT('me+', id, '@iix.se');
+
+## General log
+    show variables like 'general_log%';
+    SET GLOBAL general_log = 'ON';
+    SET GLOBAL general_log = 'OFF';
+
+## Run query without cache
+    SELECT SQL_NO_CACHE * from users where name like 'Ol%';
+
+## Indexes
+    SHOW INDEX FROM users;
+
+    ALTER TABLE users ADD INDEX index_name(firstName);
+    CREATE INDEX index_name ON users(firstName);
+    
+    ALTER TABLE users DROP INDEX users;
+    DROP INDEX index_name ON users;
+
+## Explain/describe
+    EXPLAIN users;
+    DESCRIBE users;
+    DESC users;
+
+    DESC SELECT * FROM users;
+
+## Profiling
+    SET SESSION profiling = 1;
+    SHOW PROFILES;
+    SHOW PROFILE FOR QUERY 3;
+    SHOW STATUS LIKE 'Last_Query_Cost';
+    
+## Collation
+    show variables like "collation_database";
+    SELECT SCHEMA_NAME 'database', default_character_set_name 'charset', DEFAULT_COLLATION_NAME 'collation' FROM information_schema.SCHEMATA;
+

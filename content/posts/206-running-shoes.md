@@ -1,0 +1,114 @@
+---
+title: "Running shoes"
+slug: "206"
+date: "2024-08-06"
+categories: "Running"
+tags:
+- running
+- 'running shoes'
+summary: A list of running shoes I have or might get in the future
+---
+
+## Possible future shoes
+
+| Shoe                     | Weight (g) | Drop (mm) | Stack (mm) | Size                             | Price (SEK) |
+|--------------------------|------------|-----------|------------|----------------------------------|-------------|
+| Puma Velocity NITRO 4    | 247        | 10        | 36         | EU 42                            | 1500        |
+
+## Definitions
+
+| Run type   | Definition |
+|------------|------------|
+| Easy       | Easy, maintainable and conversational pace. From slow recovery runs to a more steady pace. |
+| Tempo      | Aerobic runs from steady to threshold. |
+| Long       | Easy or tempo pace for over an hour. |
+
+
+## Owned shoes
+
+| Name                      | Stack (mm)  | Drop (mm) | Weight (g)  | Run type(s)       | Size                  | Fit       | Rating |
+|---------------------------|-------------|-----------|-------------|-------------------|-----------------------|-----------|--------|
+| PUMA MagMax NITRO         | 47.0 (42.9) | 8.0 (9.6) | 292         | Easy, Long        | US 9, UK 8, EU 42     | Good      | Great  |
+| Adidas Adizero Boston 12  | 37.0 (34.5) | 6.5 (6.1) | 260         | Easy? Tempo? Long | US 8.5, UK 8, EU 42   | Large     | Good   |
+| PUMA Deviate Nitro 2      | 38.0 (31.7) | 8.0 (5.6) | 260         | Easy, Tempo, Long | US 9, UK 8, EU 42     | Good      | ?      |
+| ASICS Novablast 5         | 41.5 (40.9) | 8.0 (7.4) | 255         | Easy, Tempo, Long | US 8.5, UK 7.5, EU 42 | Snug      | Great  |
+| Saucony Endorphin Speed   | 35.5        | 8.0       | 221         | Easy, Tempo, Long | US 9, UK 8, EU 42.5   | Good      | Good   |
+| Saucony Endorphin Speed 4 | 38 (36.2)   | 8.0 (8.7) | 237         | Tempo, Long       | US 8.5, UK 7.5 EU 42  | Too small | Great  |
+| Saucony Triumph 21        | 39 (39.1)   | 10 (10.5) | 282         | Easy, Tempo       | US 9.5, UK 8.5 EU 43  | Large     | Great  |
+| ASICS Gel Cumulus 25      | 37.5 (38.4) | 8.0 (11.2)| 269         | Easy              | US 9, UK 8, EU 42.5   | Good      | Bad    |
+
+### PUMA MagMax NITRO (2025)
+
+- [Stats over att runrepeat.com](https://runrepeat.com/puma-magmax-nitro).
+
+A very premium shoe. The upper is very comfortable, with a really nice, stretchy tongue and laces.
+Lots of cushioning and with a stable base, it's obviously more focused on comfort and recovery than nimbleness and speed.
+My first run it felt pretty slow, but after getting used to it, it feels alright for most easy runs. 
+The stability makes it nice for longer runs, but the weight is noticeable.
+
+All in all it's a great shoe for its use cases. I wouldn't run faster than easy with it. Even steady pace is probably not great.
+
+### Adidas Adizero Boston 12 (2025)
+
+- [Stats over att runrepeat.com](https://runrepeat.com/adidas-adizero-boston-12).
+
+First impressions are not great. The upper is not especially comfortable and the laces are really bad, making it hard to get a good fit.
+The sole is extremely stiff, which seems good for the durability, but not great for faster runs. Maybe my weak feet are the problem here though.
+
+After the first 50k, the impression is slightly better. While it's sometimes hard to get a good fit due to the bad upper and laces, the sole is pretty nice.
+Stiff midsole with a stable base makes it great for longer runs. However, I'm having a hard time knowing what else it's great for. 
+It's a bit too uncomfortable as a daily, and it's still a bit too stiff when running tempo, making it unwieldy. 
+But speed-wise it shines somewhere around steady pace.
+
+### PUMA Deviate Nitro 2 (2025)
+
+- [Stats over att runrepeat.com](https://runrepeat.com/puma-deviate-nitro-2).
+
+These shoes seem great, but the low drop combined with the carbon fiber plate causes massive achilles tendon issues for me.
+So I have a hard time testing them.
+
+### ASICS Novablast 5 (2024)
+
+- [Stats over att runrepeat.com](https://runrepeat.com/asics-novablast-5).
+
+Comfortable shoe with a very tall stack for a daily. They are outrageously soft and bouncy when new, maybe even uncomfortably bouncy in the heel.
+Gets pretty firm in negative degrees though. Then after the next few hundred kilometers, they lose some of their bounce and become more soft and cushioned instead.
+I think I prefer the latter, when it's more cushioned than bouncy, since I use it mostly as a daily. 
+Depite it being more cushioned than bouncy, the rocker gives it more speed than you would expect. So I actually ran a 10k PB in these.
+All in all, it's a great shoe for most runs. It's pretty rare with a shoe which handles everything from recovery to threshold as this shoe does.
+
+Its only negative would be that the foam compresses noticeably. I don't like using it for several days in a row, as the foam flattens a lot.
+I would let them rest every other day, with maybe some occasional two days in a row.
+
+### Saucony Endorphin Speed 1 (2024)
+
+Light, springy shoes. Somewhere in between Saucony Triumph 21 and Saucony Endorphin Speed 4. Great for most runs, but not the best for any.
+
+### Saucony Endorphin Speed 4 (2024)
+
+- [Stats over att runrepeat.com](https://runrepeat.com/saucony-endorphin-speed-4).
+
+Too small for me. Should have gone for half a size up.
+I could only run short distances in these because of the wrong size, and had to sell them.
+Such a shame since they seem great for running faster paces (but hard to run slow in).
+They also seem a bit slappy when running.
+
+### Saucony Triumph 21 (2024)
+
+- [Stats over att runrepeat.com](https://runrepeat.com/saucony-triumph-21).
+
+I should have gone for half a size down, but they still fit alright when heel-locked.
+Extremely good shoes. Soft and bouncy. Maybe a bit heavy when running for a long time, but I haven't really tested them for long runs.
+
+### ASICS Gel Cumulus 25 (2023)
+
+- [Stats over att runrepeat.com](https://runrepeat.com/asics-gel-cumulus-25).
+
+These shoes are the worst shoes I've ever run in.
+They feel sluggish running in them, turning all my runs into easy recovery runs.
+
+## Other shoes
+
+### New Balance FuelCell Rebel v4
+
+I tried a size 42, which was way too short. I probably have 42.5 or 43 in New Balance shoes. 

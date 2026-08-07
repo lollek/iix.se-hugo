@@ -1,0 +1,46 @@
+---
+title: Bash Cheatsheet
+slug: "221"
+date: 2025-12-05
+categories: "Programming"
+tags:
+- bash
+summary: "Things I keep doing in Bash"
+---
+
+## Conditional from function
+```bash
+is_field() {
+	local field
+	for field in $FIELDS; do
+		if [[ "$field"  == "$1" ]]; then
+			return 0
+		fi
+	done
+	return 1
+}
+
+if is_field; then
+  ...
+fi
+```
+
+## List
+```bash
+TRAILERS=()
+TRAILERS+=( "--trailer" "Co-authored-by: $(get_author_name) <$(get_author_email)>")
+git commit "$@" "${TRAILERS[@]}"
+```
+
+## Loop over multiline variable
+```bash
+LINES=$(cat <<EOF
+line1
+line2
+EOF
+)
+
+while IFS='\n' read line; do
+  ...
+done <<< "$LINES"
+```

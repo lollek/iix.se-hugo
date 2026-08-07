@@ -1,0 +1,27 @@
+---
+title: Example SSH Config (.ssh/config)
+slug: "9"
+date: 2014-08-28T12:00:00Z
+categories: "Linux"
+tags:
+- ssh
+---
+To make it easier to ssh (and enable autocomplete), create a ~/.ssh/config like
+this:
+```ssh
+Host *
+  SendEnv LANG LC_*
+  HashKnownHosts yes
+  GSSAPIAuthentication yes
+  PreferredAuthentications publickey,password
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 60
+  Compression      yes
+  CompressionLevel 4
+Host github
+  Hostname github.com
+  User git
+```
+
+and you will always use user git when you ssh to github
+

@@ -1,0 +1,64 @@
+---
+title: Awk Cheatsheet
+slug: "43"
+date: 2016-03-24T12:00:00Z
+categories: "Programming"
+tags:
+- awk
+---
+
+## Links
+* [Awk tutorial](https://earthly.dev/blog/awk-examples/)
+
+## Pattern matching (grep)
+```bash
+# Should return one line per file
+ls -a | awk '//'
+
+# Should print files starting with a dot
+ls -a | awk '/^\./'
+```
+
+## Counting (wc)
+```bash
+ls | awk '{i++} END {print i}' # Should return number of files
+```
+
+## Delete all svn-files with an exclamation mark in `svn status`
+```bash
+svn status | awk '/^!/{print $2}' | xargs svn delete --force
+```
+
+## Find only the first match and print it
+```bash
+echo data | awk "/$pattern/{print;exit}"
+```
+
+## Ignore the first line
+```bash
+echo data | awk 'NR>1'
+```
+
+## Ignore duplicate lines
+```bash
+echo data | awk '!seen[$0]++'
+```
+
+## Insert a line after a pattern
+```bash
+echo data | awk '/match/{print;print "Inserted line";next}1'
+```
+
+## Insert a line before a pattern
+```bash
+echo data | awk '/match/{print "Inserted line"}1'
+```
+
+## Print second column / Splitting a line
+```bash
+# head -n 1 | cut -d ' ' -f2
+awk '{print $2; exit}'
+
+# Split on ; and strip spaces
+awk -F'[ ]*;[ ]*' '{print $2}'
+```

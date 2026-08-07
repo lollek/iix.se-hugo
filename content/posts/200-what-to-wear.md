@@ -1,0 +1,115 @@
+---
+title: "What to wear"
+slug: "200"
+date: "2023-10-15"
+categories: "Clothes"
+tags:
+- clothes
+summary: What to wear at what temperature
+---
+
+## Running
+
+x = bad | ? = not great | o = good
+
+|              | 20 | 18 | 16 | 14 | 12 | 10 | 8 | 6 | 4 | 2 | 0 | -2 | -4 | -6 | -8 | -10 |
+|--------------|----|----|----|----|----|----|---|---|---|---|---|----|----|----|----|-----|
+| Shorts       |  o |  o |  o |  o |  o |  o | o |   |   |   |   |    |    |    |    |     |
+| Leggings     |    |    |    |    |    |    | ? | o | o | o | ? |    |    |    |    |     |
+| Base layer   |    |    |    |    |    |    |   |   |   |   | o |  o |  o |  o |  o |     |
+
+### Shorts
+
+* Running cap
+* Running T-shirt
+* Shorts
+
+#### 10°C or lower
+* Add thin running top
+
+
+### Leggings
+
+* Running cap or thin running beanie
+* Running T-shirt
+* Thin running gloves
+* Thin running top
+* Thin running leggings
+
+
+### Base layer
+
+* Thin running beanie
+* Thin running gloves
+* Base layer
+* Thin running top
+* Thin running leggings
+
+#### -8°C or lower
+
+* Change to medium running top
+* Change to medium running leggings
+
+
+## Walking
+
+### Table
+
+x = bad | ? = not great | o = good
+
+|             | 16 | 14 | 12 | 10 | 8 | 6 | 4 | 2 | 0 | -2 | -4 | -6 | -8 | -10 | -12 | -15 | -20 |
+|-------------|----|----|----|----|---|---|---|---|---|----|----|----|----|-----|-----|-----|-----|
+| Everyday    |    |    |    |  o |   |   |   |   |   |    |    |    |    |     |     |     |     |
+| Softshell   |    |    |    |    |   | o | x | x | x |    |    |    |    |     |     |     |     |
+| Hardshell   |    |    |  o |  o | o | o | o | ? | ? |  ? |  x |    |    |     |     |     |     |
+| Down Parka  |    |    |    |    |   |   |   |   | o |  o |  o |  o |    |     |     |  o  |     |
+
+### Everyday (10°C Sunny/Cloudy)
+
+* Cap
+* Medium Gloves (KOMBI Multi Mission Glove)
+* Merino Buff
+* Thin merino sweater
+* Everyday Jacket (Fjällräven Skogsö)
+* Breathing Shoes (Icebug ELI)
+
+
+### Softshell (5°C Cloudy)
+
+* Beanie
+* Thick gloves (KOMBI Multi Mission Glove)
+* Merino Buff
+* Thin Merino Sweater
+* Softshell Jacket (Matterhorn MH-700)
+* Warm Shoes (Icebug Haze)
+
+#### 0°C or lower
+
+* Thick sweater
+
+
+### Hardshell (0°C Cloudy)
+* Medium gloves (KOMBI Multi Mission Glove)
+* Medium Fleece
+* Hardshell Jacket (Everest U Icon 3L Jacket)
+* Warm Shoes (Icebug Haze)
+
+#### 5°C or lower
+
+* Add thick beanie
+* Add merino Buff
+* Add thin Merino Sweater 
+* Change to thick gloves (Hestra Wakayama - 5 finger)
+
+
+### Down Parka (-10°C Cloudy)
+
+* Thick beanie
+* Thick gloves (Hestra Wakayama - 5 finger)
+* Down Parka (Everest Down Parka)
+* Heavy Boots (Hanwag Tatra II Wide)
+
+#### -15°C or lower
+
+* Add thin merino sweater
+* Change from thick gloves (Hestra Wakayama - 5 finger)? These get a bit cold after a while. Maybe there's a warmer alternative.

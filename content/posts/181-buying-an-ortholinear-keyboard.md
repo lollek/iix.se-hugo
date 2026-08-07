@@ -1,0 +1,20 @@
+---
+title: Buying an ortholinear keyboard
+slug: "181"
+date: 2022-02-23
+categories: "Scratch"
+summary: Scratch space for writing down my thoughts on ortos
+---
+Since I've been introduced to the fact that programmable, ortholinear keyboards exist, I can stop thinking about buying one.
+Since they are super expensive, I'll try to write down alternatives here.
+
+## OLKB Preonic @ Drop (50% Keyboard)
+* [Base Kit (PCB + Case + Plates)](https://drop.com/buy/preonic-mechanical-keyboard) = $140
+* OLKB Keycaps = $30
+* Pack of switches = $40
+* Estimated total - excl VAT, tarrifs, etc = $210
+* Estimated total - incl 25% charges + $30 shipping = $295
+
+## OLKB Planck EZ (40% Keyboard)
+* [Full kit](https://www.zsa.io/planck/buy/) = $245
+* Estimated total - incl 25% charges + $0 shipping = $305

@@ -1,0 +1,15 @@
+---
+title: "Nginx: HTTP redirect to HTTPS"
+slug: "72"
+date: 2017-06-10T12:00:00Z
+categories: "System Administration"
+tags:
+- nginx
+---
+```nginx
+server {
+  listen *:80;
+  server_name _;
+  return 301 https://$host$request_uri;
+}
+```

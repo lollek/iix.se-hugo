@@ -1,0 +1,26 @@
+---
+title: Salt Cheatsheet
+slug: "122"
+date: 2019-03-05T12:00:00Z
+categories: "Linux"
+tags:
+- salt
+---
+```
+# List hosts
+sudo salt-key --list-all
+
+# Add host
+sudo salt-key -a hello-hostname
+
+# Apply one/several hosts
+sudo salt 'hello-hostname' state.apply
+sudo salt 'hello-*' state.apply
+sudo salt 'hello-hostname' test.ping
+sudo salt '*' state.apply users
+
+## När något gick fel och man missade att lessa loggen
+sudo salt-run jobs.list_jobs
+sudo salt-run jobs.lookup_jid $jobid | less
+```
+

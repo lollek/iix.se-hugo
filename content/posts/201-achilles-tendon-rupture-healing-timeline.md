@@ -1,0 +1,52 @@
+---
+title: "Achilles tendon rupture healing timeline"
+slug: "201"
+date: "2023-12-14"
+categories: "Running"
+tags:
+- achilles tendon
+summary: A timeline of how the tendon heals.
+---
+
+Timeline after rupture using conservative (non operative) treatment.
+
+|Time after rupture| Status
+|------------------|----------------------------------------------|
+| 0-2 weeks        | Foot in air cast. Using two crutches to walk |
+| 2-4 weeks        | Restarting the treatment due to nurse forgetting to put wedges in the air cast. Foot in air cast with three wedges. Using two crutches to walk |
+| 4-5 weeks        | Foot in air cast with three wedges. Using two crutches to walk |
+| 5-6 weeks        | Foot in air cast with two wedges. Using one crutch to walk indoors, two outdoors |
+| 6-7 weeks        | Foot in air cast with one wedge. Using one crutch to walk indoors, two outdoors |
+| 7-7½ weeks       | Foot in air cast with no wedges. Using one crutch to walk indoors, two outdoors |
+| 7½-8 weeks       | Stopped using air cast. Using two crutches to walk. Very swollen foot. |
+| 8-9 weeks        | Using two crutches to walk, but can hobble around without crutches if I need to. Swollen ankle. |
+| 9-10 weeks       | Using two crutches to walk, but can walk a few meters without crutches if I need to. Lightly swollen ankle. |
+| 10-11 weeks      | Switching between no, one and two crutches to walk indoors. Two crutches outdoors. Occasionally swollen ankle. |
+| 11-12 weeks      | Switching between no and one crutch to walk indoors. Two crutches outdoors. Rarely swollen ankle. |
+| 12-13 weeks      | Two crutches outdoors. Can only walk around 1 km outdoors without strain. Occasionally lightly swollen ankle. |
+| 13-14 weeks      | No crutches. Can bike 8km and walk 1km daily, barely. Rarely lightly swollen ankle. |
+| 14-15 weeks      | Biking 8km daily and can walk short distances at a brisk pace without any strain. Walking up stairs is easy, walking down stairs is a bit unnatural due to lack of flexibility. Foot is stiff when I haven't stretched for a while, and very stiff in the morning. Rarely lightly swollen ankle. |
+| 15-16 weeks      | Can walk a few kilometers, but not really pick up the pace for long. Walking down some stairs is a bit problematic. Foot is stiff in the mornings. I no longer get swollen. |
+| 16-17 weeks      | Can bike at full power again. Foot gets tired after walking for more than a km or so at a time. Foot is stiff in the mornings. |
+| 17-18 weeks      | Same as previous week, but foot is regularly lightly swollen |
+| 18-19 weeks      | Same as previous week, but foot is barely ever swollen |
+| 19-20 weeks      | Can walk almost 3km without pain. Can use the crosstrainer for almost 30 minutes before I get lopsided. I now only stretch once a day, in the morning, to loosen up the foot. |
+| 20-21 weeks      | No real improvement. Stopped stretching. |
+| 21-22 weeks      | Can walk 5km at a brisk pace. Can do around 10 single leg calf raises at half height. |
+| 22-23 weeks      | No real improvement. Can jog at a very slow pace for a few seconds at a time. |
+| 23-24 weeks      | No real improvement. |
+| 24-25 weeks      | No real improvement. |
+| 25-26 weeks      | No real improvement. |
+| 26-27 weeks      | Can "jog" for a kilometer at a time at around 9-10min/km. |
+| 27-28 weeks      | Swollen foot. Can only go for short walks. No jogging. |
+| 28-29 weeks      | Constantly lightly swollen and aching foot. Can only walk for around 30 minutes or the swelling increases. Started stretching again. |
+| 29-30 weeks      | Slightly stiff ankle, especially in the morning. Constantly sore calf muscles. Can easily walk 5km+ again. Stopped stretching. |
+| 30-31 weeks      | No obvious improvement. |
+| 31-32 weeks      | Changed physiotherapist, since I was very unsatisfied with my previous one, and got a much better training programme. Can now walk/run for 2.5km within 25 minutes two/three times a week. |
+| 32-33 weeks      | Can walk/run for 2.5 km within 19 minutes every other day. |
+| 33-34 weeks      | Can run for 3 km within 22 minutes every other day. Still cannot do full height calf raises. |
+| 34-35 weeks      | Can run for 3 km within 21 minutes four times a week. |
+| 35-36 weeks      | Can run for 4 km at 7:00/km 4.5 times a week. It feels like hitting a wall somewhere around 5 km, after which the leg starts arching. |
+| 36-37 weeks      | Can run for avg 5 km at avg 6:38/km 4.5 times a week. |
+| 37-38 weeks      | Can run for avg 4 km at avg 6:41/km 4.5 times a week. Left leg still has notably less muscles than the right one. |
+| 38-39 weeks      | Can do most kinds of run as I could before, like sprints at 3:00/min. I would treat my achilles tendon as healed now, but it will take many more months to fully regain the muscles. I still cannot do full height calf raises, but they get ever so slightly higher every other week or so. |

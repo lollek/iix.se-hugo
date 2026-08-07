@@ -1,0 +1,35 @@
+---
+title: "Timex Marlin 1977 Dark Purple"
+slug: "159"
+date: 2021-07-20
+categories: "Wristwatch"
+tags:
+- wristwatch
+- timex
+---
+
+I was given a watch by my father-in-law, and created this page to document all I could find about it. 
+Because of the numbers on the dial I was able to find the full information about the watch.
+
+## Text on Dial
+Timex - Water Resistant - Taiwan - 2615102477
+
+## Data
+
+Measurements are done by me, and might not be the official numbers. See e.g. Width.
+
+* Model: 2615102477
+* Width: 34mm (35mm according to most online listings)
+* Length: 36mm
+* Lug-to-lug: 18mm
+* Movement: [Calibre M24](http://www.ranfft.de/cgi-bin/bidfun-db.cgi?10&ranfft&&2uswk&Timex_M24) (According to forum posts)
+  - Pin-lever escapement
+* Crystal: Acrylic
+* Year of manifacture: 1977 (Since all search results seem to have 1977 in its name, I guess it was only made that year)
+
+## Media
+
+Images from Bålsta Auktionshall
+
+* ![Front](https://balstaauktionshall.nu/images/custom/ProductTemplate/163493.jpg)
+* ![Back](https://balstaauktionshall.nu/images/custom/ProductTemplate/163496.jpg)

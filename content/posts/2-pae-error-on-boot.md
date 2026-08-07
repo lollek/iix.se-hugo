@@ -1,0 +1,54 @@
+---
+title: PAE error on boot
+slug: "2"
+date: 2013-10-29T12:00:00Z
+categories: "Linux"
+tags:
+- kernel
+- pae
+- chroot
+- lilo
+- mount
+- mkinitrd
+- troubleshooting
+---
+***If you found this page through Google, it would be stupid to follow these instructions to the letter***
+
+    This kernel requires the following features not present on the CPU:
+    pae
+    Unable to boot - please use a kernel appropriate for your CPU.
+
+## Step 1: Chroot
+```bash
+mount /dev/sda2 /mnt
+for i in dev proc sys; do mount --bind /$i /mnt/$i; done
+chroot /mnt
+```
+
+## Step 2: Make initrd
+```bash
+cd /boot
+mkinitrd -c -k 3.2.45 -m ext2 -f ext2 -r /dev/sda2
+```
+
+## Step 3: Add to lilo
+```bash
+echo >>/etc/lilo.conf <<EOF
+# Linux bootable partition config begins
+image = /boot/vmlinuz-generic-3.2.45
+initrd = /boot/initrd.gz
+root = /dev/sda2
+label = Slacky-3.2.45-initrd
+read-only
+# Linux bootable partition config ends
+EOF
+```
+
+## Step 4: Update lilo and reboot
+```bash
+lilo
+exit
+umount /mnt/{dev,proc,sys,}
+reboot
+```
+

@@ -1,0 +1,14 @@
+---
+title: Docker-Compose Cheatsheet
+slug: "83"
+date: 2017-09-03T12:00:00Z
+categories: "Linux Administration"
+tags:
+- docker
+- docker-compose
+---
+```bash
+# Restart single instance and refresh image
+sudo docker-compose up -d --build backend
+```
+

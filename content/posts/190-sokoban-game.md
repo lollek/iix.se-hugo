@@ -1,0 +1,39 @@
+---
+title: Sokoban Game
+slug: "190"
+date: 2014-01-08
+categories: "Games"
+tags:
+- browsergame
+summary: A small game I made in class
+---
+## About
+
+A quick and dirty sokoban game with 50 levels. Made just when I started
+university.
+
+Graphics by Sofie Aid.
+
+Source code can be found here:
+* [Javascript](https://github.com/lollek/sokoban.js)
+
+## How to play
+
+Move with WASD or HJKL. Reset the game with space.
+
+The goal is to move all boxes into the marked zone.
+
+## Game
+
+{{< rawhtml >}}
+<script type="text/javascript" src="/sokoban.js/sokoban.js"></script>
+<canvas id="stdscr" width="200" height="200" tabindex="1" style="margin: auto; display: block">
+  If you can read this, then your browser does not support HTML5 canvas
+</canvas>
+<script>
+  document.getElementById("stdscr").onselectstart = function() { return false; }
+  initMain("stdscr", "/sokoban.js/tiles.png");
+</script>
+{{< /rawhtml >}}
+
+[Click here to play it on a separate page](/sokoban.js)
