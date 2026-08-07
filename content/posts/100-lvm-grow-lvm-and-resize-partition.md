@@ -1,0 +1,72 @@
+---
+title: "LVM: Grow LVM and resize partition"
+slug: "100"
+date: 2018-03-16
+categories: "Linux"
+tags:
+- lvm
+- vgdisplay
+- lvresize
+- xfs_growfs
+---
+Sometimes your install a distro and it refuses to take up all available space.
+
+## 1. Find out how much space we got to play with. 
+```
+$ sudo vgdisplay
+ --- Volume group ---
+  VG Name               fedora
+  System ID
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  3
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                2
+  Open LV               2
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <49.00 GiB
+  PE Size               4.00 MiB
+  Total PE              12543
+  Alloc PE / Size       4860 / 18.98 GiB
+  Free  PE / Size       7683 / 30.01 GiB
+  VG UUID               cCXkBg-Z8Or-jmmi-avaK-91VW-v3cF-CmhiKD
+```
+
+## 2. Resize your logical volume of choice to soak up the space
+```
+$ sudo lvresize --size +30.01G /dev/fedora/root
+  Rounding size to boundary between physical extents: 30.01 GiB.
+  Size of logical volume fedora/root changed from 15.00 GiB (3840 extents) to 45.01 GiB (11523 extents).
+  Logical volume fedora/root successfully resized.
+```
+
+## 3. Grow your partition
+
+XFS Example:
+```
+$ sudo xfs_growfs /
+meta-data=/dev/mapper/fedora-root isize=512    agcount=4, agsize=983040 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1 spinodes=0 rmapbt=0
+         =                       reflink=0
+data     =                       bsize=4096   blocks=3932160, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal               bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 3932160 to 11799552
+```
+
+EXT4 Example:
+```
+$ sudo resize2fs /dev/vg0/lv0 
+resize2fs 1.43.4 (31-Jan-2017)
+Filesystem at /dev/vg0/lv0 is mounted on /; on-line resizing required
+old_desc_blocks = 5, new_desc_blocks = 12
+The filesystem on /dev/vg0/lv0 is now 47122432 (4k) blocks long.
+```

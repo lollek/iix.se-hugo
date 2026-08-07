@@ -1,0 +1,46 @@
+---
+title: "Watch Renovation: Rouan"
+slug: "166"
+date: 2021-08-23
+categories: "Wristwatch"
+tags:
+- wristwatch
+- rouan
+---
+
+Some notes on a watch which I'm renovating
+
+Text on dial: Rouan - De Luxe - 17 Rubis - Unbreakable mainspring - Shockproof
+
+Text on case back: Antimagnetic - Stainless steel caseback
+
+## Data
+
+Measurements are done by me, and might not be the official numbers.
+
+* Width: ?
+* Length: ?
+* Height: ?
+* Lug-to-lug: ?
+* Movement: [Eppler 7](http://www.ranfft.de/cgi-bin/bidfun-db.cgi?10&ranfft&69&2uswk&Eppler_7) - or a variant thereof
+  - Pin lever escapement
+  - Metal rocker bar
+* Case: Looks like gold plated nickle.
+* Crystal: Acrylic
+
+## Problems
+
+- [x] Doesn't run despite being fully wound
+- [ ] Slightly cracked glass
+
+## Troubleshooting steps
+
+* Opened up and cleaned all parts. 
+
+## Media
+* ![Front](https://i.imgur.com/zIvyMHH.jpg)
+* ![Back](hhttps://i.imgur.com/HIxytRU.jpg)
+* ![Open back](https://i.imgur.com/ZL4xPPg.jpg)
+* ![Movement front](https://i.imgur.com/2LJ3TvA.jpg)
+* ![Movement back](https://i.imgur.com/fZJD6s3.jpg)
+

@@ -1,0 +1,24 @@
+---
+title: "Systemd: Creating a generic non-forking service"
+slug: "59"
+date: 2017-05-31T12:00:00Z
+categories: "System Administration"
+tags:
+- systemd
+---
+```systemd
+# /etc/systemd/system/spark-backend.service
+
+Description=iix.se java spark backend
+After=network.target
+
+[Service]
+WorkingDirectory=/srv/spark-backend
+User=www-data
+Group=www-data
+
+ExecStart=/srv/spark-backend/bin/spark-backend
+
+[Install]
+WantedBy=multi-user.target
+```

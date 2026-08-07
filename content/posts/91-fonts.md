@@ -1,0 +1,9 @@
+---
+title: Fonts
+slug: "91"
+date: 2017-11-18T12:00:00Z
+---
+## [FiraCode](https://github.com/tonsky/FiraCode)
+* Supports iTerm2 & [IntelliJ](https://github.com/tonsky/FiraCode/wiki/Intellij-products-instructions)  
+* Has ligatures  
+

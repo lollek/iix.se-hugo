@@ -1,0 +1,14 @@
+---
+title: Firefox on linux with a dark theme has black input fields
+slug: "114"
+date: 2018-09-25T12:00:00Z
+categories: "Linux"
+tags:
+- troubleshooting
+- firefox
+- gdm3
+---
+If you are using firefox on linux with a dark theme, unstyled input fields will have black background and white text. Sometimes just white text on white background.
+
+According to [this bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1283086) it has been this way for the last 17 years. To fix it, pop by `about:config` and add a new key-value (String): `"widget.content.gtk-theme-override": "Adwaita:light"`. After restarting firefox, things will be as they should be.
+

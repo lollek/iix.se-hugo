@@ -1,0 +1,17 @@
+---
+title: Let's encrypt - Adding new/separate cert
+slug: "109"
+date: 2018-07-31T12:00:00Z
+categories: "Linux Administration"
+tags:
+- certbot
+- letsencrypt
+- systemctl
+- docker
+---
+```
+sudo systemctl stop nginx
+sudo docker run --rm -it -p80:80 -p443:443 -v "/etc/letsencrypt:/etc/letsencrypt" -v "/var/lib/letsencrypt:/var/lib/letsencrypt" certbot/certbot certonly --expand --standalone -d yolo.iix.se
+sudo systemctl start nginx
+```
+

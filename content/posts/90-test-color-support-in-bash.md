@@ -1,0 +1,17 @@
+---
+title: Test color support in bash
+slug: "90"
+date: 2017-11-18T12:00:00Z
+categories: "Linux"
+tags:
+- bash
+---
+```bash
+for i in {0..255} ; do
+    printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
+    if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
+        printf "\n";
+    fi
+done
+```
+

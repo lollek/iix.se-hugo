@@ -1,0 +1,14 @@
+---
+title: Java Regex Cheatsheet
+slug: "123"
+date: 2019-03-14T12:00:00Z
+categories: "Programming"
+tags:
+- regex
+---
+## Escaping strings in regex replace
+```
+s.replaceFirst(Pattern.quote("text to replace"), 
+               Matcher.quoteReplacement("replacement text"));
+```
+

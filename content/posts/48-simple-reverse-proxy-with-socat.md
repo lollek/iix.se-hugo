@@ -1,0 +1,12 @@
+---
+title: Simple reverse proxy with socat
+slug: "48"
+date: 2017-04-28T12:00:00Z
+categories: "Linux"
+tags:
+- socat
+---
+Open local port 5901 to be reached from anyone by connecting to localhost:8080 
+
+    socat TCP4-LISTEN:8080,fork TCP4:localhost:5901
+

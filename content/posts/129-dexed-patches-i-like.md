@@ -1,0 +1,15 @@
+---
+title: Dexed patches I like
+slug: "129"
+date: 2020-02-19T12:00:00Z
+categories: "Scratch"
+tags:
+- music
+---
+## Cartridge collections:
+* [Dexed_cart_1.0.zip](http://hsjp.eu/downloads/Dexed/Dexed_cart_1.0.zip)  
+
+## Patches
+* `!Instruments > Misc > 2003.SYX > Brass&REV7`: Punchy brass with slight echo  
+* `!Instruments > Misc > DECKARD.SYX > SYNTHI 1-5`: Versatile dark lead bass  
+

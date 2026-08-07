@@ -1,0 +1,48 @@
+---
+title: "Buddhist Daily Practice"
+slug: "194"
+date: 2022-10-13
+categories: "Scratch"
+tags:
+- buddhism
+summary: Some buddhist gems for stressful days
+---
+
+## Daily Practice
+1. Take refuge in the Triple Gem
+2. Recite the Five Precepts
+3. Recice the Five Remembrances
+4. Chant or read a Sutra
+5. Meditation
+6. Dedicate Merits of Practice
+
+## The Triple Gem
+* I take refuge in the Buddha
+* I take refuge in the Dharma
+* I take refuge in the Sangha
+
+## The Five Precepts
+* I will refrain from taking life
+* I will refrain from stealing or taking what is not freely given
+* I will refrain from sexual misconduct
+* I will refrain from false speech
+* I will refrain from consuming intoxicants
+
+## The Five Remembrances
+* I am subject to aging. There is no way to avoid aging.
+* I am subject to ill health. There is no way to avoid illness.
+* I am going to die. There is no way to avoid death.
+* Everyone and everything that I love will change, and I will be separated from them.
+* My only true possessions are my actions, and I cannot escape their consequences.
+
+## List of Sutras
+* [Karaniya Metta Sutta: The Buddha's Words on Loving-Kindness](https://www.accesstoinsight.org/tipitaka/kn/snp/snp.1.08.amar.html)
+* [Samadhanga Sutta: The Factors of Concentration](https://www.accesstoinsight.org/tipitaka/an/an05/an05.028.than.html)
+* [Ambalatthika-rahulovada Sutta: Instructions to Rahula at Mango Stone](https://www.accesstoinsight.org/tipitaka/mn/mn.061.than.html)
+* [Sabbasava Sutta: All the Fermentations](https://www.accesstoinsight.org/tipitaka/mn/mn.002.than.html)
+* [Maha-satipatthana Sutta: The Great Frames of Reference](https://www.accesstoinsight.org/tipitaka/dn/dn.22.0.than.html)
+* [Anapanasati Sutta: Mindfulness of Breathing](https://www.accesstoinsight.org/tipitaka/mn/mn.118.than.html)
+* [Sigalovada Sutta: The Discourse to Sigala](https://www.accesstoinsight.org/tipitaka/dn/dn.31.0.nara.html)
+* [Adittapariyaya Sutta: The Fire Sermon](https://www.accesstoinsight.org/tipitaka/sn/sn35/sn35.028.nymo.html)
+* [Anatta-lakkhana Sutta: The Discourse on the Not-self Characteristic](https://www.accesstoinsight.org/tipitaka/sn/sn22/sn22.059.nymo.html)
+* [Dhammacakkappavattana Sutta: Setting the Wheel of Dhamma in Motion](https://www.accesstoinsight.org/tipitaka/sn/sn56/sn56.011.than.html)

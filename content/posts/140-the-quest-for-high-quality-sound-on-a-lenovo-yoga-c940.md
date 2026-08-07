@@ -1,0 +1,169 @@
+---
+title: The quest for high quality sound on a Lenovo Yoga C940
+slug: "140"
+date: 2020-07-21
+categories: "Linux"
+tags:
+- pulseaudio
+- troubleshooting
+- pacmd
+- audioquality
+- alsa
+---
+
+## Introduction
+I recently bought a new laptop, a Lenovo C940, and installed Ubuntu 20.04 on it. Everything works grand on it, except for the audio. 
+When using Windows, the sound quality was great, however when in Linux, the sound is really tinny and can be harsh to listen to. 
+It doesn't matter if I use the speakers or the headphone-jack, both sound the same. 
+The strange thing is that when I connect my bluetooth headphones (and use bluetooth A2DP), the sound is absolutely perfect. 
+I'm not sure how this works technically, but if I can get bluetooth to work, I should be able to get the same quality normally, right?
+
+Some stats for the machine:
+* Model: Lenovo Yoga C940
+* OS: Ubuntu 20.04
+* Kernel: 5.4.0-40-generic #44-Ubuntu SMP
+* Realtek ALC298 (`grep Codec /proc/asound/card0/codec*`)
+
+## Pulseaudio & ALSA troubleshooting (unsuccessful)
+I have tried fiddling with PulseAudio configuration a lot, but to be honest, it doesn't matter what I do there, the audio quality stays the same.
+My pulseaudio config now is this:
+```
+$ pulseaudio --dump-conf 
+### Read from configuration file: /home/iix/.config/pulse//daemon.conf ###
+daemonize = no
+fail = yes
+high-priority = yes
+nice-level = -11
+realtime-scheduling = yes
+realtime-priority = 5
+allow-module-loading = yes
+allow-exit = yes
+use-pid-file = yes
+system-instance = no
+local-server-type = user
+cpu-limit = no
+enable-shm = yes
+flat-volumes = no
+rescue-streams = yes
+lock-memory = no
+exit-idle-time = 20
+scache-idle-time = 20
+dl-search-path = /usr/lib/pulse-13.99.1/modules
+default-script-file = /etc/pulse/default.pa
+load-default-script-file = yes
+log-target = 
+log-level = notice
+resample-method = auto
+avoid-resampling = no
+enable-remixing = yes
+remixing-use-all-sink-channels = yes
+remixing-produce-lfe = no
+remixing-consume-lfe = no
+lfe-crossover-freq = 0
+default-sample-format = s16le
+default-sample-rate = 44100
+alternate-sample-rate = 48000
+default-sample-channels = 2
+default-channel-map = front-left,front-right
+default-fragments = 4
+default-fragment-size-msec = 25
+enable-deferred-volume = yes
+deferred-volume-safety-margin-usec = 8000
+deferred-volume-extra-delay-usec = 0
+shm-size-bytes = 0
+log-meta = no
+log-time = no
+log-backtrace = 0
+rlimit-fsize = -1
+rlimit-data = -1
+rlimit-stack = -1
+rlimit-core = -1
+rlimit-rss = -1
+rlimit-as = -1
+rlimit-nproc = -1
+rlimit-nofile = 256
+rlimit-memlock = -1
+rlimit-locks = -1
+rlimit-sigpending = -1
+rlimit-msgqueue = -1
+rlimit-nice = 31
+rlimit-rtprio = 9
+rlimit-rttime = 200000
+```
+
+I have tried changing `default-sample-format`, `resample-method`, `default-sample-rate` and `alternate-sample-rate` to most sane values that are supported on my machine, from pretty low to super-quality, but I can't hear any difference at all.
+I also tried fiddling a little bit with /etc/asound.conf, but I don't really understand that file, so I'm not sure I've done it correctly. Once I set it to
+```
+# Use PulseAudio plugin hw
+pcm.!default {
+   type plug
+   slave.pcm hw
+}
+
+ctl.!default {
+  type pulse
+  fallback "sysdefault"
+}
+
+# vim:set ft=alsaconf:
+
+defaults.pcm.rate_converter "speexrate_best"
+```
+
+and restarted, which seems to have disabled pulseaudio, but still sounded the same.
+
+If I open PulseEffects, my "chain" or whatever it's called to be (When running Spotify) looks like this:
+🎵 -> s16le,44.1kHz -> F32LE,44.1kHz -> s16le,48.0kHz -> 141ms -> 🔊
+
+I'm unsure if the problem is really in pulseaudio, since if so, I think I should notice a difference when changing the configuration.
+
+Some things I have learned:
+* /usr/share/doc/alsa-base/driver/HD-Audio-Models.txt.gz can contain information on drivers for a given sound card. Doesn't for my model though.
+* `lshw -c multimedia` gives some nice info on the sound card
+* `lspci` / `lspci -v` can give some verbose hardware information
+* `pacmd list-sinks` shows pulseaudio sinks with quite detailed information
+
+## Kernel module troubleshooting (unsuccessful)
+There is an [ArchWiki page for Lenovo Yoga C940](https://wiki.archlinux.org/index.php/Lenovo_Yoga_c940#Audio).
+It recommends snd_hda_intel as a sound card driver for my kernel version (Pre 5.5).
+The one I use by default is `sof-audio-pci`
+The ArchWiki recommends that I add `options snd_hda_intel enable=1 index=1` to /etc/modprobe.d/alsa-base.conf, but if I add that and reboot, I still get the same driver. 
+I tried adding `blacklist sof-audio-pci` to /etc/modprobe.d/blacklist.conf, but that did nothing either. 
+Only if I add `blacklist snd_sof_pci` does it seem to remove the driver. 
+But when I tried that, I lost all sound, and it didn't seems like any driver was active. 
+But when I changed the line in /etc/modprobe.d/alsa-base.conf to `options snd-hda-intel dmic_detect=0` instead, it seems like the kernel driver did change. 
+Running lshw -c multimedia after that shows configuration: driver=snd_hda_intel latency=32, which is the recommended driver. 
+But with that driver, my sound quality is the same as it was when using sof-audio-pci! 
+If both snd_hda_intel and sof-audio-pci give the same audio experience, it's probably not the fault of the driver? 
+
+## Troubleshooting summary
+- I can switch to another driver (snd-hda-intel) by adding the line `options snd-hda-intel dmic_detect=0` to the end of /etc/modprobe.d/alsa-base.conf, then adding the line `blacklist snd_sof_pci` to the end of /etc/modprobe.d/blacklist.conf and rebooting. But it makes to difference whatsoever (works OK but bad tinny audio with absolutely no bass)
+- Setting high quality pulseaudio settings (e.g. `resample-method = soxr-vhq` + `default-sample-format = s24le` + `default-sample-rate = 96000`) and restarting pulseaudio makes no difference to the audio quality, no matter which of the two audio drivers I use.
+
+To make sure it just wasn't something to do with bad equalizing / lack of bass boost, I installed pulseeffects, lsp-plugins and ran `pulseeffects --reset`. Then started pulseeffects and applied bass boost equalization. Instead of adding a lot of bass, this just added a noticeable buzzing sound when bass was supposed to play. When I check one of those VU-meters, it looks like the bass is displayed successfully. Though something prevents it from being sent to the hardware, it seems.
+
+There is seems to be [an open kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=205755), but seems like it might be on hold. I also think [this redhat bug](https://bugzilla.redhat.com/show_bug.cgi?id=1772498) was a bit interesting to read, but it might be out of date. If I understand it correctly, the lower frequencies are lost because the driver doesn't successfully enable some of the speakers in the sound card, basically acting like a low-pass filter.
+
+**Update 2020-07-27**
+I remembered that I had an AudioQuest DragonFly lying around. It's basically a USB DAC/amp. And if I connect my headphones through it the sound is perfect. So the problem must be with the sound card.
+
+## Solution from Lenovo (Update 2020-12-27)
+I received an email telling me there is an fix on the Lenovo forum [(Link)](https://forums.lenovo.com/t5/Other-Linux-Discussions/Yoga-C930-audio-on-Linux/m-p/5042057?page=4).
+
+To summarize, the solution is to update your BIOS with a custom version, and then use a patched kernel. At the time of writing you have to use the custom kernel provided on the forum, but in the future, someone might make a kernel module for it. However, the BIOS update seems to have side effects, as noted by Mark at Lenovo:
+
+> We're looking into whether if and how we could release this officially but it's looking really tricky. 
+> The problem is with the changes implemented they will impact Windows - both audio performance and power consumption. 
+> Understandably the firmware team can't do that (and the reality is they have limited resources to spend on this as 
+> it's not an officially Linux supported platform - we've been really lucky that the firmware team have been happy to dig into this at all).
+
+So, if you are comfortable with upgrading your BIOS and is fine with any eventual consequences, it is done something like this [(Maybe this link describes it better?)](https://forums.lenovo.com/topic/findpost/27/5042057/5206337):
+1. [Download the kernel](https://drive.google.com/file/d/1HHY928tMwwndp0ak2MdbsOlxuK0OJMWA/view?usp=sharing)
+1. [Download the BIOS](https://drive.google.com/file/d/1Z5K3ARVYSQLSenD6EBElf6foEtLQQGoM/view?usp=sharing)
+1. Create a FAT32 bootable USB stick
+1. Copy the BIOS to the USB stick
+1. Boot from the USB stick and run the commands
+    1. Press ESC to skip startup.nsh
+    1. Type fs0 to find the USB stick.
+    1. Run AUCN57WW.efi
+1. After booting in Linux, install the kernel with dpkg
