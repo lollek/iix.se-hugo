@@ -27,6 +27,7 @@
 
 {{- $term := .Data.Term }}
 {{- if .IsHome }}
+{{- partial "searchbox.html" . }}
 <section class="home-posts">
 {{- end }}
 {{- range $index, $page := $paginator.Pages }}
@@ -38,7 +39,7 @@
 {{- end }}
 
 {{- if gt $paginator.TotalPages 1 }}
-<footer class="page-footer">
+<footer class="page-footer"{{ if .IsHome }} id="postsPagination"{{ end }}>
   <nav class="pagination">
     {{- if $paginator.HasPrev }}
     <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">« Previous page</a>
