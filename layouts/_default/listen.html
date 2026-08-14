@@ -1,0 +1,49 @@
+{{- define "main" }}
+<article class="listen-page">
+  <header class="listen-page-header">
+    <p class="listen-page-kicker">Ambient radio + air traffic control</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </header>
+
+  <section class="listen-panel" aria-labelledby="music-title">
+    <div class="listen-panel-heading">
+      <p class="listen-panel-label">Music</p>
+      <h2 id="music-title">SomaFM</h2>
+    </div>
+    <form id="somafm-form" class="somafm-form">
+      <label for="somafm-station">Station</label>
+      <div class="somafm-controls">
+        <select id="somafm-station">
+          <option value="https://somafm.com/player24/station/dronezone" selected>Drone Zone</option>
+          <option value="https://somafm.com/player24/station/groovesalad">Groove Salad</option>
+          <option value="https://somafm.com/player24/station/deepspaceone">Deep Space One</option>
+          <option value="https://somafm.com/player24/station/missioncontrol">Mission Control</option>
+        </select>
+        <button type="submit">Open SomaFM</button>
+      </div>
+    </form>
+    <p class="listen-panel-note">SomaFM opens in its official player so it can handle audio playback.</p>
+  </section>
+
+  <section class="listen-panel" aria-labelledby="atc-title">
+    <div class="listen-panel-heading">
+      <p class="listen-panel-label">Air traffic control</p>
+      <h2 id="atc-title">LiveATC</h2>
+    </div>
+    <form id="liveatc-form" class="liveatc-form">
+      <label for="liveatc-icao">Airport ICAO</label>
+      <div class="liveatc-controls">
+        <input id="liveatc-icao" name="icao" value="RJTT" maxlength="4" pattern="[A-Za-z]{3,4}" autocomplete="off" spellcheck="false" required>
+        <button type="submit">Open LiveATC</button>
+      </div>
+    </form>
+    <p class="listen-panel-note">LiveATC opens in its own tab so its official player can handle access and playback.</p>
+  </section>
+
+  <p class="listen-attribution">Audio is provided by <a href="https://somafm.com/" rel="noopener noreferrer" target="_blank">SomaFM</a> and <a href="https://www.liveatc.net/" rel="noopener noreferrer" target="_blank">LiveATC.net</a>.</p>
+</article>
+
+{{- $listen := resources.Get "js/listen-to-the-clouds.js" | js.Build | minify | fingerprint }}
+<script defer src="{{ $listen.RelPermalink }}" integrity="{{ $listen.Data.Integrity }}"></script>
+{{- end }}
