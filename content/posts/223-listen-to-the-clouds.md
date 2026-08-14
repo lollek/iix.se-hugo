@@ -14,8 +14,8 @@ The old Listen to the clouds page no longer loads reliably because its scripts h
 
 [Open Listen to the clouds](/listen-to-the-clouds/)
 
-Choose a SomaFM station and open it in SomaFM's official player. Enter an airport ICAO code, such as `RJTT` for Tokyo International Airport, then open LiveATC in a second tab.
+The music panel can play an embedded Spotify ambient playlist or AmbientMusicalGenre on SoundCloud. Choose either source from the menu, then start playback in the provider's own player. It also retains a SomaFM station picker that opens the official SomaFM player.
 
-The two services remain in their official players because browsers block direct audio streams and the providers do not allow their players to be embedded. Their separate tabs can still play together. The page starts with SomaFM Drone Zone and Stockholm Arlanda as its defaults.
+SomaFM does not permit third-party embeds, so it stays in its official player. Enter an airport ICAO code, such as `RJTT` for Tokyo International Airport, then open LiveATC in a second tab. LiveATC availability varies by airport and may depend on its current access rules.
 
-LiveATC availability varies by airport and may depend on its current access rules. SomaFM and LiveATC remain the providers of their respective audio.
+The page starts with Spotify Atmospheric Calm, SomaFM Drone Zone, and Tokyo International Airport as its defaults. Spotify, SoundCloud, SomaFM, and LiveATC remain the providers of their respective audio.

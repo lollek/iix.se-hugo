@@ -9,9 +9,24 @@
   <section class="listen-panel" aria-labelledby="music-title">
     <div class="listen-panel-heading">
       <p class="listen-panel-label">Music</p>
-      <h2 id="music-title">SomaFM</h2>
+      <h2 id="music-title">Music player</h2>
     </div>
-    <form id="somafm-form" class="somafm-form">
+    <label for="music-source">Source</label>
+    <select id="music-source">
+      <option value="spotify" selected>Spotify - Atmospheric Calm</option>
+      <option value="soundcloud">SoundCloud - AmbientMusicalGenre</option>
+      <option value="somafm">SomaFM - official player</option>
+    </select>
+
+    <div class="music-provider" data-music-provider="spotify">
+      <iframe class="music-embed" data-src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4TnpT6vw5rE?utm_source=generator" title="Spotify: Atmospheric Calm" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+    <div class="music-provider" data-music-provider="soundcloud" hidden>
+      <iframe class="music-embed" data-src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fambientmusicalgenre&amp;color=%2363351b&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true" title="SoundCloud: AmbientMusicalGenre" loading="lazy" allow="autoplay" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+    <form id="somafm-form" class="music-provider somafm-form" data-music-provider="somafm" hidden>
       <label for="somafm-station">Station</label>
       <div class="somafm-controls">
         <select id="somafm-station">
@@ -23,7 +38,7 @@
         <button type="submit">Open SomaFM</button>
       </div>
     </form>
-    <p class="listen-panel-note">SomaFM opens in its official player so it can handle audio playback.</p>
+    <p class="listen-panel-note">Spotify and SoundCloud play here. SomaFM opens in its official player because it does not permit third-party embeds.</p>
   </section>
 
   <section class="listen-panel" aria-labelledby="atc-title">
