@@ -45,6 +45,7 @@ taste has changed.
 |       Fine | Colombia Huila                             | Kafferosteriet Koppar |            430 kr | Alright everyday coffee                             |
 |       Fine | Delicious Days                             | Johan & Nyström       |            540 kr | A bit bland                                         |
 |       Fine | El Salvador Big Monday                     | Lykke kaffegårdar     |            436 kr | Tastes alright, but is really nothing special.      |
+|       Fine | El Salvador Finca El Carro                 | Gringos               |            417 kr | Tastes alright, but is really nothing special.      |
 |       Fine | Etiopien Amaro Gayo                        | Kafferosteriet Koppar |            430 kr |                                                     |
 |       Fine | Etiopien Guji                              | Gringos               |            556 kr | Berries, flavorful, sweet. Good everyday coffee     |
 |       Fine | Etiopien Hafursa                           | Kafferosteriet Koppar |                   |                                                     |
