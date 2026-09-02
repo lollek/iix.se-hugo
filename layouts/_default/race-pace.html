@@ -52,37 +52,60 @@
   </section>
 
   <section class="pace-panel" aria-labelledby="predictions-title">
-    <div class="pace-panel-heading">
-      <p class="pace-panel-label">Equivalent performances</p>
-      <h2 id="predictions-title">Race predictions</h2>
+    <div class="pace-panel-heading pace-predictions-heading">
+      <div>
+        <p class="pace-panel-label">Equivalent performances</p>
+        <h2 id="predictions-title">Race predictions</h2>
+      </div>
+      <fieldset class="pace-model-selector">
+        <legend>Prediction model</legend>
+        <label><input type="radio" name="prediction-model" value="daniels" checked> Daniels</label>
+        <label><input type="radio" name="prediction-model" value="riegel"> Riegel</label>
+      </fieldset>
     </div>
+    <label id="riegel-exponent-control" class="pace-riegel-input" for="riegel-exponent" hidden>Riegel exponent
+      <input id="riegel-exponent" type="number" min="1" max="1.2" step="0.01" value="1.06" inputmode="decimal">
+    </label>
     <div class="pace-table-wrap">
       <table>
         <thead>
-          <tr><th scope="col">Distance</th><th scope="col">Pace / km</th><th scope="col">Total time</th></tr>
+          <tr><th scope="col">Distance</th><th scope="col">min / km</th><th scope="col">Total time</th></tr>
         </thead>
         <tbody id="prediction-results"></tbody>
       </table>
     </div>
     <details class="pace-calculation">
       <summary>How predictions are calculated</summary>
-      <p>The calculator uses the Daniels VDOT model. It starts with distance <i>d</i>, in metres, and finish time <i>t</i>, in minutes, to find running speed <i>v</i>, in metres per minute.</p>
-      <div class="pace-equations">
-        <p><i>v</i> = <i>d</i> / <i>t</i></p>
-        <p>VO<sub>2</sub> = -4.60 + 0.182258<i>v</i> + 0.000104<i>v</i><sup>2</sup></p>
-        <p>%VO<sub>2</sub>max = 0.8 + 0.1894393e<sup>-0.012778<i>t</i></sup> + 0.2989558e<sup>-0.1932605<i>t</i></sup></p>
-        <p>VO<sub>2</sub>max = VO<sub>2</sub> / %VO<sub>2</sub>max</p>
-        <p>VDOT = VO<sub>2</sub> / %VO<sub>2</sub>max</p>
+      <div data-prediction-explanation="daniels">
+        <p>The calculator uses the Daniels VDOT model. It starts with distance <i>d</i>, in metres, and finish time <i>t</i>, in minutes, to find running speed <i>v</i>, in metres per minute.</p>
+        <div class="pace-equations">
+          <p><i>v</i> = <i>d</i> / <i>t</i></p>
+          <p>VO<sub>2</sub> = -4.60 + 0.182258<i>v</i> + 0.000104<i>v</i><sup>2</sup></p>
+          <p>%VO<sub>2</sub>max = 0.8 + 0.1894393e<sup>-0.012778<i>t</i></sup> + 0.2989558e<sup>-0.1932605<i>t</i></sup></p>
+          <p>VO<sub>2</sub>max = VO<sub>2</sub> / %VO<sub>2</sub>max</p>
+          <p>VDOT = VO<sub>2</sub> / %VO<sub>2</sub>max</p>
+        </div>
+        <p>VO<sub>2</sub> is the estimated oxygen cost of the running speed. The duration equation estimates the sustainable fraction of VO<sub>2</sub>max; dividing VO<sub>2</sub> by that fraction estimates VO<sub>2</sub>max. In this model, that estimate is reported as VDOT rather than a laboratory VO<sub>2</sub>max measurement.</p>
+        <p>For each race prediction, the calculator keeps the selected VDOT and distance fixed, then repeatedly adjusts <i>t</i> until the equations produce that VDOT. Pace is the resulting time divided by distance.</p>
       </div>
-      <p>VO<sub>2</sub> is the estimated oxygen cost of the running speed. The duration equation estimates the sustainable fraction of VO<sub>2</sub>max; dividing VO<sub>2</sub> by that fraction estimates VO<sub>2</sub>max. In this model, that estimate is reported as VDOT rather than a laboratory VO<sub>2</sub>max measurement.</p>
-      <p>For each race prediction, the calculator keeps the selected VDOT and distance fixed, then repeatedly adjusts <i>t</i> until the equations produce that VDOT. Pace is the resulting time divided by distance.</p>
+      <div data-prediction-explanation="riegel" hidden>
+        <p>Riegel predictions use the entered race result directly: <i>t</i><sub>2</sub> = <i>t</i><sub>1</sub>(<i>d</i><sub>2</sub> / <i>d</i><sub>1</sub>)<sup><i>k</i></sup>. Pace is the predicted time divided by distance.</p>
+        <p>The default exponent <i>k</i> = 1.06 is a general estimate; lower values favour endurance and higher values favour speed over longer distances.</p>
+      </div>
     </details>
   </section>
 
   <section class="pace-panel" aria-labelledby="nsm-title">
-    <div class="pace-panel-heading">
-      <p class="pace-panel-label">Norwegian Singles Method</p>
-      <h2 id="nsm-title">Suggested interval paces</h2>
+    <div class="pace-panel-heading pace-predictions-heading">
+      <div>
+        <p class="pace-panel-label">Norwegian Singles Method</p>
+        <h2 id="nsm-title">Suggested interval paces</h2>
+      </div>
+      <fieldset class="pace-model-selector">
+        <legend>Interval pace model</legend>
+        <label><input type="radio" name="interval-model" value="daniels" checked> Daniels</label>
+        <label><input type="radio" name="interval-model" value="riegel"> Riegel</label>
+      </fieldset>
     </div>
     <div class="pace-table-wrap">
       <table>
@@ -94,7 +117,7 @@
     </div>
   </section>
 
-  <p class="pace-note">VDOT estimates use Jack Daniels' published oxygen-cost and performance equations. Race conditions, course profile, and training specificity still matter.</p>
+  <p class="pace-note">VDOT estimates use Jack Daniels' published oxygen-cost and performance equations. Riegel estimates use a distance-scaling exponent. Race conditions, course profile, and training specificity still matter.</p>
 </article>
 
 {{- $pace := resources.Get "js/race-pace.js" | js.Build | minify | fingerprint }}

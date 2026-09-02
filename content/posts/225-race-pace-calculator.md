@@ -14,7 +14,7 @@ I wanted a quick way to turn a recent race result into useful pacing estimates f
 
 [Open the race pace calculator](/race-pace/)
 
-Enter a race distance and finish time to calculate a Daniels VDOT. The slider starts at that value, but can be adjusted to compare a different fitness level. It updates the predicted total time and pace per kilometre for distances from 1,500 m through the marathon.
+Enter a race distance and finish time to calculate a Daniels VDOT. The slider starts at that value, but can be adjusted to compare a different fitness level. Choose Daniels VDOT or Riegel independently for race predictions and interval paces. Riegel starts with its conventional 1.06 exponent, which can be adjusted to better reflect an individual's endurance profile.
 
 It also suggests VDOT-based paces for three Norwegian Singles Method workouts: 3x10 minutes at 150-minute race pace, 5x6 minutes at 90-minute race pace, and 8x3 minutes at 60-minute race pace.
 
