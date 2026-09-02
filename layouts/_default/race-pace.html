@@ -1,0 +1,102 @@
+{{- define "main" }}
+<article class="pace-page">
+  <header class="pace-page-header">
+    <p class="pace-page-kicker">Daniels VDOT</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </header>
+
+  <section class="pace-panel pace-input-panel" aria-labelledby="result-title">
+    <div class="pace-panel-heading">
+      <p class="pace-panel-label">Starting point</p>
+      <h2 id="result-title">Recent race result</h2>
+    </div>
+    <div class="pace-result-grid">
+      <label for="race-distance">Distance
+        <select id="race-distance" name="distance">
+          <option value="1500">1,500 m</option>
+          <option value="1609.344">1 mile</option>
+          <option value="3000">3 km</option>
+          <option value="5000" selected>5 km</option>
+          <option value="10000">10 km</option>
+          <option value="21097.5">Half marathon</option>
+          <option value="42195">Marathon</option>
+        </select>
+      </label>
+      <label for="race-hours">Hours
+        <input id="race-hours" name="hours" type="number" min="0" max="23" value="0" inputmode="numeric" required>
+      </label>
+      <label for="race-minutes">Minutes
+        <input id="race-minutes" name="minutes" type="number" min="0" max="59" value="25" inputmode="numeric" required>
+      </label>
+      <label for="race-seconds">Seconds
+        <input id="race-seconds" name="seconds" type="number" min="0" max="59" value="0" inputmode="numeric" required>
+      </label>
+    </div>
+    <p id="input-message" class="pace-message" role="status"></p>
+  </section>
+
+  <section class="pace-panel" aria-labelledby="vdot-title">
+    <div class="pace-panel-heading pace-vdot-heading">
+      <div>
+        <p class="pace-panel-label">Fitness estimate</p>
+        <h2 id="vdot-title">VDOT</h2>
+      </div>
+      <label class="pace-vdot-input" for="vdot-input">VDOT
+        <input id="vdot-input" type="number" min="20" max="85" step="0.1" value="38.3" inputmode="decimal">
+      </label>
+    </div>
+    <label class="sr-only" for="vdot-slider">Adjust VDOT</label>
+    <input id="vdot-slider" type="range" min="20" max="85" step="0.1" value="38.3">
+    <div class="pace-slider-labels" aria-hidden="true"><span>20</span><span>85</span></div>
+  </section>
+
+  <section class="pace-panel" aria-labelledby="predictions-title">
+    <div class="pace-panel-heading">
+      <p class="pace-panel-label">Equivalent performances</p>
+      <h2 id="predictions-title">Race predictions</h2>
+    </div>
+    <div class="pace-table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Distance</th><th scope="col">Pace / km</th><th scope="col">Total time</th></tr>
+        </thead>
+        <tbody id="prediction-results"></tbody>
+      </table>
+    </div>
+    <details class="pace-calculation">
+      <summary>How predictions are calculated</summary>
+      <p>The calculator uses the Daniels VDOT model. It starts with distance <i>d</i>, in metres, and finish time <i>t</i>, in minutes, to find running speed <i>v</i>, in metres per minute.</p>
+      <div class="pace-equations">
+        <p><i>v</i> = <i>d</i> / <i>t</i></p>
+        <p>VO<sub>2</sub> = -4.60 + 0.182258<i>v</i> + 0.000104<i>v</i><sup>2</sup></p>
+        <p>%VO<sub>2</sub>max = 0.8 + 0.1894393e<sup>-0.012778<i>t</i></sup> + 0.2989558e<sup>-0.1932605<i>t</i></sup></p>
+        <p>VO<sub>2</sub>max = VO<sub>2</sub> / %VO<sub>2</sub>max</p>
+        <p>VDOT = VO<sub>2</sub> / %VO<sub>2</sub>max</p>
+      </div>
+      <p>VO<sub>2</sub> is the estimated oxygen cost of the running speed. The duration equation estimates the sustainable fraction of VO<sub>2</sub>max; dividing VO<sub>2</sub> by that fraction estimates VO<sub>2</sub>max. In this model, that estimate is reported as VDOT rather than a laboratory VO<sub>2</sub>max measurement.</p>
+      <p>For each race prediction, the calculator keeps the selected VDOT and distance fixed, then repeatedly adjusts <i>t</i> until the equations produce that VDOT. Pace is the resulting time divided by distance.</p>
+    </details>
+  </section>
+
+  <section class="pace-panel" aria-labelledby="nsm-title">
+    <div class="pace-panel-heading">
+      <p class="pace-panel-label">Norwegian Singles Method</p>
+      <h2 id="nsm-title">Suggested interval paces</h2>
+    </div>
+    <div class="pace-table-wrap">
+      <table>
+        <thead>
+          <tr><th scope="col">Workout</th><th scope="col">Reference pace</th><th scope="col">Target / km</th></tr>
+        </thead>
+        <tbody id="nsm-results"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="pace-note">VDOT estimates use Jack Daniels' published oxygen-cost and performance equations. Race conditions, course profile, and training specificity still matter.</p>
+</article>
+
+{{- $pace := resources.Get "js/race-pace.js" | js.Build | minify | fingerprint }}
+<script defer src="{{ $pace.RelPermalink }}" integrity="{{ $pace.Data.Integrity }}"></script>
+{{- end }}
