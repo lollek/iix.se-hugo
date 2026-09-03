@@ -49,6 +49,16 @@
     <label class="sr-only" for="vdot-slider">Adjust VDOT</label>
     <input id="vdot-slider" type="range" min="20" max="85" step="0.1" value="38.3">
     <div class="pace-slider-labels" aria-hidden="true"><span>20</span><span>85</span></div>
+    <div class="pace-model-controls">
+      <fieldset class="pace-model-selector">
+        <legend>Calculation model</legend>
+        <label><input type="radio" name="calculation-model" value="daniels" checked> Daniels</label>
+        <label><input type="radio" name="calculation-model" value="riegel"> Riegel</label>
+      </fieldset>
+      <label id="riegel-exponent-control" class="pace-riegel-input" for="riegel-exponent" hidden>Riegel exponent
+        <input id="riegel-exponent" type="number" min="1" max="1.2" step="0.01" value="1.06" inputmode="decimal">
+      </label>
+    </div>
   </section>
 
   <section class="pace-panel" aria-labelledby="predictions-title">
@@ -57,15 +67,7 @@
         <p class="pace-panel-label">Equivalent performances</p>
         <h2 id="predictions-title">Race predictions</h2>
       </div>
-      <fieldset class="pace-model-selector">
-        <legend>Prediction model</legend>
-        <label><input type="radio" name="prediction-model" value="daniels" checked> Daniels</label>
-        <label><input type="radio" name="prediction-model" value="riegel"> Riegel</label>
-      </fieldset>
     </div>
-    <label id="riegel-exponent-control" class="pace-riegel-input" for="riegel-exponent" hidden>Riegel exponent
-      <input id="riegel-exponent" type="number" min="1" max="1.2" step="0.01" value="1.06" inputmode="decimal">
-    </label>
     <div class="pace-table-wrap">
       <table>
         <thead>
@@ -101,11 +103,6 @@
         <p class="pace-panel-label">Norwegian Singles Method</p>
         <h2 id="nsm-title">Suggested interval paces</h2>
       </div>
-      <fieldset class="pace-model-selector">
-        <legend>Interval pace model</legend>
-        <label><input type="radio" name="interval-model" value="daniels" checked> Daniels</label>
-        <label><input type="radio" name="interval-model" value="riegel"> Riegel</label>
-      </fieldset>
     </div>
     <div class="pace-table-wrap">
       <table>

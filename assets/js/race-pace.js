@@ -4,8 +4,7 @@ const minutesInput = document.querySelector("#race-minutes");
 const secondsInput = document.querySelector("#race-seconds");
 const vdotSlider = document.querySelector("#vdot-slider");
 const vdotInput = document.querySelector("#vdot-input");
-const predictionModelInputs = document.querySelectorAll('input[name="prediction-model"]');
-const intervalModelInputs = document.querySelectorAll('input[name="interval-model"]');
+const calculationModelInputs = document.querySelectorAll('input[name="calculation-model"]');
 const predictionExplanations = document.querySelectorAll("[data-prediction-explanation]");
 const riegelExponentControl = document.querySelector("#riegel-exponent-control");
 const riegelExponentInput = document.querySelector("#riegel-exponent");
@@ -89,16 +88,15 @@ function updatePredictions() {
   const riegelExponent = Number(riegelExponentInput.value);
   const sourceDistance = Number(distanceInput.value);
   const sourceDuration = Number(hoursInput.value) * 60 + Number(minutesInput.value) + Number(secondsInput.value) / 60;
-  const predictionModel = document.querySelector('input[name="prediction-model"]:checked').value;
-  const intervalModel = document.querySelector('input[name="interval-model"]:checked').value;
+  const calculationModel = document.querySelector('input[name="calculation-model"]:checked').value;
   vdotInput.value = vdot.toFixed(1);
-  riegelExponentControl.hidden = predictionModel !== "riegel" && intervalModel !== "riegel";
+  riegelExponentControl.hidden = calculationModel !== "riegel";
   predictionExplanations.forEach((explanation) => {
-    explanation.hidden = explanation.dataset.predictionExplanation !== predictionModel;
+    explanation.hidden = explanation.dataset.predictionExplanation !== calculationModel;
   });
 
   results.replaceChildren(...distances.map(([label, distance]) => {
-    const duration = predictionModel === "daniels"
+    const duration = calculationModel === "daniels"
       ? durationFor(distance, vdot)
       : riegelDurationFor(sourceDistance, sourceDuration, distance, riegelExponent);
     const row = document.createElement("tr");
@@ -107,7 +105,7 @@ function updatePredictions() {
   }));
 
   nsmResults.replaceChildren(...nsmWorkouts.map(([workout, reference, duration]) => {
-    const pace = intervalModel === "daniels"
+    const pace = calculationModel === "daniels"
       ? 1000 / speedFor(vdot, duration)
       : riegelPaceFor(sourceDistance, sourceDuration, duration, riegelExponent);
     const row = document.createElement("tr");
@@ -170,11 +168,7 @@ vdotSlider.addEventListener("input", () => {
 });
 vdotInput.addEventListener("input", updateFromVdotInput);
 riegelExponentInput.addEventListener("input", updateFromRiegelExponent);
-predictionModelInputs.forEach((input) => input.addEventListener("change", () => {
-  message.textContent = "";
-  updatePredictions();
-}));
-intervalModelInputs.forEach((input) => input.addEventListener("change", () => {
+calculationModelInputs.forEach((input) => input.addEventListener("change", () => {
   message.textContent = "";
   updatePredictions();
 }));
