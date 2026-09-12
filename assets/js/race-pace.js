@@ -13,9 +13,12 @@ const results = document.querySelector("#prediction-results");
 const nsmResults = document.querySelector("#nsm-results");
 
 const distances = [
-  ["1,500 m", 1500],
+  ["400 m", 500],
+  ["1/2 mile", 804.672],
+  ["1 km", 1000],
   ["1 mile", 1609.344],
   ["3 km", 3000],
+  ["2 mile", 3218.688],
   ["5 km", 5000],
   ["10 km", 10000],
   ["Half marathon", 21097.5],
