@@ -50,6 +50,12 @@ enableRobotsTXT = true
     weight = 10
 
 [[menu.main]]
+    identifier = "running"
+    name = "running"
+    url = "/running/"
+    weight = 15
+
+[[menu.main]]
     identifier = "categories"
     name = "categories"
     url = "/categories/"

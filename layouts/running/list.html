@@ -1,0 +1,33 @@
+{{- define "main" }}
+<article class="pace-page running-page">
+  <header class="pace-page-header">
+    <p class="pace-page-kicker">Training and pacing</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </header>
+
+  <section class="running-section" aria-labelledby="running-tools-title">
+    <div class="running-section-heading">
+      <p class="pace-panel-label">Calculators</p>
+      <h2 id="running-tools-title">Running tools</h2>
+    </div>
+    <div class="home-posts running-posts">
+      <article class="post-entry tag-entry"><header class="entry-header"><h2>Tools</h2></header><section class="entry-content"><p>Convert distances and pace, or solve distance, time, and speed.</p></section><a class="entry-link" aria-label="Open running tools" href="{{ "running/tools/" | absURL }}"></a></article>
+      <article class="post-entry tag-entry"><header class="entry-header"><h2>Race pace</h2></header><section class="entry-content"><p>Estimate VDOT and compare equivalent performances across race distances.</p></section><a class="entry-link" aria-label="Open race pace calculator" href="{{ "running/race-pace/" | absURL }}"></a></article>
+      <article class="post-entry tag-entry"><header class="entry-header"><h2>Norwegian Singles Method</h2></header><section class="entry-content"><p>Set interval paces and turn weekly running time into a balanced plan.</p></section><a class="entry-link" aria-label="Open Norwegian Singles Method calculator" href="{{ "running/nsm/" | absURL }}"></a></article>
+    </div>
+  </section>
+
+  <section class="running-section" aria-labelledby="running-notes-title">
+    <div class="running-section-heading">
+      <p class="pace-panel-label">Reading</p>
+      <h2 id="running-notes-title">Running notes</h2>
+    </div>
+    <div class="home-posts running-posts">
+      {{- range where site.RegularPages "Params.categories" "Running" }}
+      {{- partial "list_item.html" . }}
+      {{- end }}
+    </div>
+  </section>
+</article>
+{{- end }}

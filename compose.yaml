@@ -6,4 +6,4 @@ services:
       - "1313:1313"
     volumes:
       - .:/src
-    command: server --bind 0.0.0.0 --poll 700ms
+    command: server --baseURL http://localhost:1313/ --bind 0.0.0.0 --poll 700ms
