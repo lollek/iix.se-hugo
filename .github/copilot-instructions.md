@@ -16,5 +16,5 @@
 
 ## Validation
 
-- Run `./hugo --minify` to validate a production build locally. The wrapper uses Docker and requires Docker to be running.
-- For local preview, run `./hugo server` and visit `http://localhost:1313`.
+- Run `make build` to validate a production build locally. It uses the pinned Docker Compose image and requires Docker to be running.
+- For local preview, run `make dev` and visit `http://localhost:1313`. The Compose service uses polling for reliable file watching through Docker Desktop on macOS.
