@@ -43,6 +43,7 @@ taste has changed.
 |       Fine | Brazil Paulo Nelci Da Silva                | Kafferosteriet Koppar |            517 kr | Dark chocolate, honey, strawberry. Fine, but boring. |
 |       Fine | Buna Sifira                                | Kafferosteriet Koppar |                   |                                                     |
 |       Fine | Colombia Huila                             | Kafferosteriet Koppar |            430 kr | Alright everyday coffee                             |
+|       Fine | Colombia Las Moras                         | Gringos               |            676 kr | Blackberry, citrus candy, forest berries.           |
 |       Fine | Delicious Days                             | Johan & Nyström       |            540 kr | A bit bland                                         |
 |       Fine | El Salvador Big Monday                     | Lykke kaffegårdar     |            436 kr | Tastes alright, but is really nothing special.      |
 |       Fine | El Salvador Finca El Carro                 | Gringos               |            556 kr | Tastes alright, but is really nothing special.      |
