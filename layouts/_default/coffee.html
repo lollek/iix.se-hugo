@@ -1,0 +1,61 @@
+{{- define "main" }}
+<article class="post-single coffee-page">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+      {{- if not .Date.IsZero -}} &nbsp;|&nbsp; {{- end }}
+      <a href="https://github.com/lollek/iix.se-hugo/edit/master/data/coffee_beans.yaml" rel="noopener noreferrer" target="_blank">Edit coffees</a>
+      &nbsp;|&nbsp;
+      <a href="https://github.com/lollek/iix.se-hugo/edit/master/content/{{ .File.Path }}" rel="noopener noreferrer" target="_blank">Edit post</a>
+    </div>
+  </header>
+
+  <div class="post-content">{{ .Content }}</div>
+
+  <div class="coffee-controls" data-coffee-controls hidden>
+    <label for="coffee-search">Search
+      <input id="coffee-search" type="search" placeholder="Coffee, roaster or tasting notes" autocomplete="off">
+    </label>
+    <label for="coffee-rating">Rating
+      <select id="coffee-rating">
+        <option value="all">All ratings</option>
+        <option value="Great">Great</option>
+        <option value="Good">Good</option>
+        <option value="Fine">Fine</option>
+        <option value="Not great">Not great</option>
+        <option value="">Unrated</option>
+      </select>
+    </label>
+  </div>
+  <p class="coffee-results" data-coffee-results role="status" aria-live="polite" hidden></p>
+
+  <div class="coffee-list">
+    {{- range $rating := slice "Great" "Good" "Fine" "Not great" "" }}
+    {{- $coffees := where hugo.Data.coffee_beans "rating" $rating }}
+    {{- if $coffees }}
+    <section class="coffee-group" data-coffee-group>
+      <h2>{{ if $rating }}{{ $rating }}{{ else }}Unrated{{ end }} <span class="coffee-count" data-coffee-count>{{ len $coffees }}</span></h2>
+      <ul class="coffee-items">
+        {{- range $coffees }}
+        <li class="coffee-item" data-coffee-item data-rating="{{ .rating }}">
+          <div class="coffee-item-heading">
+            <h3>{{ .bean }}</h3>
+            {{- with .cost }}<span class="coffee-cost">{{ . }} / kg</span>{{ end }}
+          </div>
+          <p class="coffee-brand">{{ .brand }}</p>
+          {{- with .comment }}<p class="coffee-comment">{{ . }}</p>{{ end }}
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+    {{- end }}
+  </div>
+</article>
+{{- $coffee := resources.Get "js/coffee.js" | js.Build | minify | fingerprint }}
+<script defer src="{{ $coffee.RelPermalink }}" integrity="{{ $coffee.Data.Integrity }}"></script>
+{{- end }}
